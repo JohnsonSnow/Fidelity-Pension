@@ -1,0 +1,292 @@
+﻿
+@{
+    ViewBag.Title = "FAQ";
+}
+
+<section class="pt-7 pb-9 pt-md-10" style="background-image: url(../Content/Template/assets/img/FAQ.jpg)">
+    <div class="container">
+        <div class="breadcrumb-holder">
+            <div>
+                <h1 class="text-center text-white"><b>FAQ</b></h1>
+                <ul class="breadcrumb breadcrumb-transparent">
+                    <li class="breadcrumb-item">
+                        <a class="text-white" href="@Url.Action("Index", "Home")">Home</a>
+                    </li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="pt-7 pb-9 pt-md-10">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <h1><b>Frequently Asked Questions</b></h1>
+                <br />
+                <div class="col-lg-12 col-sm-8 col-xs-12">
+                    <div class="accordion" id="accordionOne">
+                        <div class="card">
+                            <div class="card-header bg-warning" id="headingOne">
+                                <h5 class="icon-bg" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <span>01. How does this Multi-Fund classification apply to me as a contributor?</span>
+                                </h5>
+                            </div>
+
+                            <div id="collapseOne" class="collapse show shadow-sm rounded-sm" aria-labelledby="headingOne" data-parent="#accordionOne">
+                                <div class="card-body">
+                                    <p>Previously, as an active contributor you could only belong to the RSA Fund and income earned by the Fund was distributed equitably to all contributors under the Fund. But now you are allowed to choose from amongst Funds I –III, depending on your age.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header bg-success" id="headingTwo">
+                                <h5 class="icon-bg collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <span>02. What difference does it make if I belonged to Fund I, II or III?</span>
+                                </h5>
+                            </div>
+
+                            <div id="collapseTwo" class="collapse shadow-sm rounded-sm" aria-labelledby="headingTwo" data-parent="#accordionOne">
+                                <div class="card-body">
+                                    <p>
+                                        Contributors in Fund I have their contributions invested in assets that have a high content of variable income (risky) assets, which by investment logic also positions them for higher income. The degree of risk varies progressively from Fund 1 to Fund III.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header bg-success" id="headingThree">
+                                <h5 class="icon-bg collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <span>03. Does it mean each Fund will earn different amounts of income?</span>
+                                </h5>
+                            </div>
+
+                            <div id="collapseThree" class="collapse shadow-sm rounded-sm" aria-labelledby="headingThree" data-parent="#accordionOne">
+                                <div class="card-body">
+                                    <p>
+                                        Yes, each Fund, because of the mix of assets in its portfolio will produce its own level of income different from other Funds.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header bg-success" id="headingFour">
+                                <h5 class="icon-bg collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <span>04. But don’t you think you are unnecessarily bothering contributors by creating 4 Funds to replace the existing 2 we are used to?</span>
+                                </h5>
+                            </div>
+
+                            <div id="collapseFour" class="collapse shadow-sm rounded-sm" aria-labelledby="headingFour" data-parent="#accordionOne">
+                                <div class="card-body">
+                                    <p>
+                                        The creation of 2 additional Funds to make 4 was a response to the yearnings of many contributors who felt that they deserved the right to choose between Funds since different contributors have different risk appetites.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header bg-warning" id="headingFive">
+                                <h5 class="icon-bg collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false"
+                                    aria-controls="collapseFive">
+                                    <span>05. How will you give me my share of the income in the old Fund if I am moving to a new one?</span>
+                                </h5>
+                            </div>
+                            <div id="collapseFive" class="collapse shadow-sm rounded-sm" aria-labelledby="headingFive" data-parent="#accordionOne" style="">
+                                <div class="card-body">
+                                    <p>
+                                        The unit value of the old Fund the day before the transfer has captured your share of the income earned to date. That unit value is used to calculate the transfer value using the number of units you have accumulated.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header bg-success" id="headingsix">
+                                <h5 class="icon-bg collapsed" data-toggle="collapse" data-target="#collapsesix" aria-expanded="false"
+                                    aria-controls="collapsesix">
+                                    <span>06. How often can I transfer from one Fund to the other?</span>
+                                </h5>
+                            </div>
+                            <div id="collapsesix" class="collapse shadow-sm rounded-sm" aria-labelledby="headingsix" data-parent="#accordionOne" style="">
+                                <div class="card-body">
+                                    <p>
+                                        Once a year.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header bg-success" id="headingSeven">
+                                <h5 class="icon-bg collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false"
+                                    aria-controls="collapseSeven">
+                                    <span>07. Are there fee to be paid for switching from one Fund to another?</span>
+                                </h5>
+                            </div>
+                            <div id="collapseSeven" class="collapse shadow-sm rounded-sm" aria-labelledby="headingSeven" data-parent="#accordionOne" style="">
+                                <div class="card-body">
+                                    <p>
+                                        One change per year attracts no fee charge. Subsequent changes within the same year will attract fees at a fee yet to be announced by PenCom.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header bg-success" id="headingEight">
+                                <h5 class="icon-bg collapsed" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false"
+                                    aria-controls="collapseEight">
+                                    <span>08. What happens if I do not communicate my choice of Fund to you on the implementation day?</span>
+                                </h5>
+                            </div>
+                            <div id="collapseEight" class="collapse shadow-sm rounded-sm" aria-labelledby="headingEight" data-parent="#accordionOne" style="">
+                                <div class="card-body">
+                                    <p>
+                                        Depending on your age, every contributor, on the date of implementation must default to Fund II or III as described above. So on that date you will be in either II or III. But if you want to switch 1, you must apply in writing.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header bg-warning" id="headingNine">
+                                <h5 class="icon-bg collapsed" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false"
+                                    aria-controls="collapseNine">
+                                    <span>09. Can I give my PFA instructions as to what assets to invest my contributions in?</span>
+                                </h5>
+                            </div>
+                            <div id="collapseNine" class="collapse shadow-sm rounded-sm" aria-labelledby="headingNine" data-parent="#accordionOne" style="">
+                                <div class="card-body">
+                                    <p>
+                                        No. PenCom only created boxes (Funds) and attached specific levels of risks/returns to each box and then gave contributors a chance to choose which box to belong subject to some conditions (as listed above).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header bg-success" id="headingTen">
+                                <h5 class="icon-bg collapsed" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false"
+                                    aria-controls="collapseTen">
+                                    <span>10.	Assuming my PFA invested 10% of my RSA balance in stocks, can I ask them to increase or decrease this percentage from time to time?</span>
+                                </h5>
+                            </div>
+                            <div id="collapseTen" class="collapse shadow-sm rounded-sm" aria-labelledby="headingTen" data-parent="#accordionOne" style="">
+                                <div class="card-body">
+                                    <p>
+                                        No, investment decisions with regard to selection of specific investment instruments are done by the PFAs who are duty bound to exercise due diligence and professionalism in their pre-investment analyses.  The Multi-Fund regulation only allows contributors to select one out of the available Funds, subject to their age brackets. When you choose a Fund, you belong to a group and PenCom’s rules guiding that group applies to contributor in the group.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header bg-success" id="headingEleven">
+                                <h5 class="icon-bg collapsed" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false"
+                                    aria-controls="collapseEleven">
+                                    <span>11.	If, for instance, I ask you to move my account from Fund 2 to Fund 1, and the day you move it, Fund 1 loses money while Fund 2 gains, will I be credited with the gain in Fund 2?</span>
+                                </h5>
+                            </div>
+                            <div id="collapseEleven" class="collapse shadow-sm rounded-sm" aria-labelledby="headingEleven" data-parent="#accordionOne" style="">
+                                <div class="card-body">
+                                    <p>
+                                        No, you will not be credited with the gain in fund 2 because your account has been moved out and whatever happens in the previous Fund does not affect you anymore. You will now be affected only by whatever happens in Fund 1 where you now belong.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header bg-success" id="headingTwelve">
+                                <h5 class="icon-bg collapsed" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="false"
+                                    aria-controls="collapseTwelve">
+                                    <span>12.	If I get a job after retirement and my subsequent monthly contributions are remitted to my PFA, to which of the funds will I belong?</span>
+                                </h5>
+                            </div>
+                            <div id="collapseTwelve" class="collapse shadow-sm rounded-sm" aria-labelledby="headingTwelve" data-parent="#accordionOne" style="">
+                                <div class="card-body">
+                                    <p>
+                                        You will belong to Fund 4 because you are already retired and Fund 4 is for retirees.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header bg-warning" id="headingThirteen">
+                                <h5 class="icon-bg collapsed" data-toggle="collapse" data-target="#collapseThirteen" aria-expanded="false"
+                                    aria-controls="collapseThirteen">
+                                    <span>13.	I understand the age grouping for the Multi-Fund structure is premised on risk considerations. What has risk got to do with retirement benefits?</span>
+                                </h5>
+                            </div>
+                            <div id="collapseThirteen" class="collapse shadow-sm rounded-sm" aria-labelledby="headingThirteen" data-parent="#accordionOne" style="">
+                                <div class="card-body">
+                                    <p>
+                                        Every active worker looks forward to having a restful retirement time when he/she will fall back on his/her RSA balance for periodic pension payments from the PFA. Such payments are expected to be stable over the retiree’s expected life span. The whole essence of pension is to ensure that the retiree gets his or her benefits as and when due. Risk is the probability that an adverse situation will occur with respect to the object in question. A typical adverse situation in pension benefit payment is that funds are not available to meet the payments as and when due. If that happens, then the whole purpose of pension is defeated. For this reason, anything that will jeopardize the chances of a pensioner getting his benefits on retirement is a source of risk. It is therefore necessary to consider how close to retirement age a contributor is, in deciding the level of risk to expose the contributor’s RSA balance to. This is why, as far as PenCom is concerned, the risk tolerance level should decrease as one approaches the retirement age.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header bg-success" id="headingFourtheen">
+                                <h5 class="icon-bg collapsed" data-toggle="collapse" data-target="#collapseFourtheen" aria-expanded="false"
+                                    aria-controls="collapseFourtheen">
+                                    <span>14.	They said the Multi-Fund structure allows us to choose. Does it allow me to choose how much or when to withdraw money from my retirement savings account?</span>
+                                </h5>
+                            </div>
+                            <div id="collapseFourtheen" class="collapse shadow-sm rounded-sm" aria-labelledby="headingFourtheen" data-parent="#accordionOne" style="">
+                                <div class="card-body">
+                                    <p>
+                                        No, as long as a subscriber is an active RSA holder, he cannot choose how much or when to withdraw from his retirement savings account. However, in certain circumstances, e.g. when a contributor is out of job for up to four months, the law allows him to withdraw 25% of his RSA balance. He has full access to his RSA balance upon retirement but subject to PenCom regulations.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header bg-success" id="headingFiftheen">
+                                <h5 class="icon-bg collapsed" data-toggle="collapse" data-target="#collapseFiftheen" aria-expanded="false"
+                                    aria-controls="collapseFiftheen">
+                                    <span>15. What are variable income instruments?</span>
+                                </h5>
+                            </div>
+                            <div id="collapseFiftheen" class="collapse shadow-sm rounded-sm" aria-labelledby="headingFiftheen" data-parent="#accordionOne" style="">
+                                <div class="card-body">
+                                    <p>
+                                        Variable income instruments are investments that generate returns that cannot be pre-determined from the date the investments were made. The returns on the investments vary from day to day, making the investment values volatile. It is this volatility that introduces the risk element to the investment. For example, quoted shares in the stock market are classified as variable income assets because the price may rise or fall tomorrow; no one is sure. But a bank deposit is classified as a fixed income asset because from the commencement date, the interest rate and tenor (e.g. 12% p.a. for 90 days) are known. Variable income instruments include Ordinary shares, Collective Investment Schemes (CIS) such as Mutual Funds, Private Equity Funds, Infrastructure funds, Real Estate Investment Trust.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header bg-success" id="headingSixtheen">
+                                <h5 class="icon-bg collapsed" data-toggle="collapse" data-target="#collapseSixtheen" aria-expanded="false"
+                                    aria-controls="collapseSixtheen">
+                                    <span>16.	Assuming my date of birth was wrongly captured in your system causing my account to be in a wrong age bracket. What should I do?</span>
+                                </h5>
+                            </div>
+                            <div id="collapseSixtheen" class="collapse shadow-sm rounded-sm" aria-labelledby="headingSixtheen" data-parent="#accordionOne" style="">
+                                <div class="card-body">
+                                    <p>
+                                        This is an opportunity to confirm the correctness of your records by visiting any of our offices and, if need be, regularize your personal data.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header bg-warning" id="headingSevenTheen">
+                                <h5 class="icon-bg collapsed" data-toggle="collapse" data-target="#collapseSevenTheen" aria-expanded="false"
+                                    aria-controls="collapseSevenTheen">
+                                    <span>17.	What impact does the multi-fund structure have on my future RSA balance at the point of retirement?</span>
+                                </h5>
+                            </div>
+                            <div id="collapseSevenTheen" class="collapse shadow-sm rounded-sm" aria-labelledby="headingSevenTheen" data-parent="#accordionOne" style="">
+                                <div class="card-body">
+                                    <p>
+                                        The multi-fund structure provides more alignment between your retirement goals, risk appetite and age. At a young age, you can afford to take high risks with your contributions which may result in immediate high or low returns. At that age, any immediate loss could be recouped in the course of time, because your retirement age is still far ahead. However, if a contributor is close to retirement age and chooses a high risk Fund, which returns an immediate loss, there may not be enough time to recover the loss before the retirement age crystallizes. So, as one approaches retirement age, one’s account is domiciled in a Fund type with a lower risk profile, where there is a higher probability that the balance to be moved to the Retiree Fund (IV) on retirement would have attained a relatively stable status.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About_Us" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Contact_Us" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="CTA_SubTitle" xml:space="preserve">
+    <value>Talk to us today</value>
+  </data>
+  <data name="CTA_Title" xml:space="preserve">
+    <value>Got Questions About Micro Pension?</value>
+  </data>
+  <data name="Footer_About_Writeup" xml:space="preserve">
+    <value>At Fidelity Pension Managers Limited (Fidelity Pension), we recognise that good administration, which devolves to efficient and effective processes, systems and controls; and, prompt and qualitative services, are the bedrock of a well-run pension scheme.</value>
+  </data>
+  <data name="For_More_Information_Contact_Us" xml:space="preserve">
+    <value>For more information contact us</value>
+  </data>
+  <data name="Meet_Our_Board_Of_Directors" xml:space="preserve">
+    <value>Meet Our Board Of Directors</value>
+  </data>
+  <data name="Our_Core_Value" xml:space="preserve">
+    <value>T - Trust, R - Respect, A - Ambition, I - Innovation, T - Teamwork, S - Speed/Safty </value>
+  </data>
+  <data name="Our_Core_Value_Title" xml:space="preserve">
+    <value>Our Core Values</value>
+  </data>
+  <data name="Our_Mission" xml:space="preserve">
+    <value>To provide safe and rewarding pension services for a happy retirement.</value>
+  </data>
+  <data name="Our_Mission_Title" xml:space="preserve">
+    <value>MISSION</value>
+  </data>
+  <data name="Our_Vision" xml:space="preserve">
+    <value>To be a leading and most innovative PFA, managing pension assets transparently and profitably.</value>
+  </data>
+  <data name="Our_Vision_Title" xml:space="preserve">
+    <value>VISION</value>
+  </data>
+  <data name="PS_Benefit_Administration_SubTitle" xml:space="preserve">
+    <value>An RSA holder whose employment has been terminated or who has been disengaged and has not been in any</value>
+  </data>
+  <data name="PS_Benefit_Administration_Title" xml:space="preserve">
+    <value>Benefit Administration</value>
+  </data>
+  <data name="PS_Cross_Border_Pension_SubTitle" xml:space="preserve">
+    <value>This product enables expatriate employees in companies registered in Nigeria and Nigerian citizens working</value>
+  </data>
+  <data name="PS_Cross_Border_Pension_Title" xml:space="preserve">
+    <value>Cross border Pension</value>
+  </data>
+  <data name="PS_Micro_Pension_SubTitle" xml:space="preserve">
+    <value>is a financial arrangement for pension services for self-employed persons and persons working in organizations</value>
+  </data>
+  <data name="PS_Micro_Pension_Title" xml:space="preserve">
+    <value>Micro Pension</value>
+  </data>
+  <data name="PS_Retirement_Advisory_SubTitle" xml:space="preserve">
+    <value>Whether you’ve got a general question or a specific query relating to your pension, our in-house experts</value>
+  </data>
+  <data name="PS_Retirement_Advisory_Title" xml:space="preserve">
+    <value>Retirement Advisory</value>
+  </data>
+  <data name="PS_RSA_Short_Note" xml:space="preserve">
+    <value>Every employee or contributor under the new pension scheme is expected to open RSA in his/her</value>
+  </data>
+  <data name="PS_Title_RSA" xml:space="preserve">
+    <value>Retirement Saving Account</value>
+  </data>
+  <data name="PS_Title_Voluntary_Contribution" xml:space="preserve">
+    <value>Voluntary Contribution</value>
+  </data>
+  <data name="PS_Voluntary_Contribution_Short_Note" xml:space="preserve">
+    <value>Refer to additional contributions you can decide to include to your mandatory pension</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>read more</value>
+  </data>
+  <data name="Slider1_SubTitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Slider1_Title" xml:space="preserve">
+    <value>The New Micro Pension plan</value>
+  </data>
+  <data name="Slider2_SubTitle" xml:space="preserve">
+    <value>Open a Retirement Savings Account Today !</value>
+  </data>
+  <data name="Slider2_Title" xml:space="preserve">
+    <value>Plan to Retire Happily</value>
+  </data>
+  <data name="Slider3_SubTitle" xml:space="preserve">
+    <value>Open a Retirement Savings Account Today !</value>
+  </data>
+  <data name="Slider3_Title" xml:space="preserve">
+    <value>Build While You Can</value>
+  </data>
+  <data name="Slider4_SubTitle" xml:space="preserve">
+    <value>tomorrow and always with a retirement Savings Account with Fidelity Pension Managers.</value>
+  </data>
+  <data name="Slider4_Title" xml:space="preserve">
+    <value>Keep the music playing today,</value>
+  </data>
+  <data name="ViewMore" xml:space="preserve">
+    <value>view more</value>
+  </data>
+  <data name="Home_Page" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Our_Address" xml:space="preserve">
+    <value>Our Address</value>
+  </data>
+  <data name="Our_Company" xml:space="preserve">
+    <value>Our Company</value>
+  </data>
+  <data name="Our_Gallery" xml:space="preserve">
+    <value>Our Gallery</value>
+  </data>
+  <data name="Our_Products_and_Services" xml:space="preserve">
+    <value>Product &amp; Services</value>
+  </data>
+  <data name="Resources" xml:space="preserve">
+    <value>Resources</value>
+  </data>
+  <data name="Send_Message" xml:space="preserve">
+    <value>Send Message</value>
+  </data>
+  <data name="Voluntary_Contribution_Page" xml:space="preserve">
+    <value>Voluntary Contribution
+
+Voluntary Contributions (VC) refers to additional contributions you can decide to include to your mandatory pension contributions for the purpose of augmenting them or simply to set aside as savings towards a goal. VC is an optional contribution made above the mandatory 18% employer and employee contributions into an individual’s Retirement Savings Account (RSA). You could access your VC subject to the extant rules on withdrawal released by PenCom. 
+
+Consequently, the Management Team of Fidelity Pension Managers Limited is an essential component of its governance and operational structure. This team is responsible for analyzing the Company’s goals and objectives and also implements and drives the strategies our employees require to achieve success. Members of this team individually and collectively ensure that expectations and goals are clear, conflicting priorities are addressed and readjusted as needed, objectives and goals are being monitored, met and/or exceeded. 
+
+The composition of the Management Team reflects general and specific legislative and regulatory requirements for companies and pension administrators, applicable corporate governance recommendations as well as internal standards. Our experienced team therefore includes the brightest players with strategy, finance, investment, operations, compliance, marketing, audit, risk, information technology and legal capabilities. Together, they bring a diverse and relevant range of experiences instrumental in moving the Company forward beyond existing frontiers.
+
+
+FEATURES
+
+Ease of Contribution
+Flexibility in contribution
+Investment of the funds
+
+BENEFITS
+
+Flexibility
+Cost effectiveness
+Tax Savings
+Convenient savings plan
+Competitive investment returns
+
+
+HOW DO I SIGN UP?
+We are available to answer all your questions and help you start a simple savings plan today. Call us on 01-2777300 or send email to avcsales@fidelitypensionmanagers.com 
+
+For more details about Voluntary contributions, Click here</value>
+  </data>
+</root>

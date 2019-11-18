@@ -1,0 +1,2193 @@
+﻿@using FidelityPension.Utility
+@using Microsoft.AspNet.Identity.Owin
+@using FidelityPension.Helper
+@model FidelityPension.Models.Core.Employee
+
+
+@{
+    ViewBag.Title = "Recapture Form";
+    string info = @ViewBag.recordFound;
+    int daa = info != null ? 1 : 0;
+    string warning = @ViewBag.RecaptureWarningErrorMsg;
+    int warn = warning != null ? 1 : 0;
+    string error = @ViewBag.error;
+    int errormsg = error != null ? 1 : 0;
+    int hide = @ViewBag.Hide != null ? 1 : 0;
+    int errorCode2 = @ViewBag.errorCode2 != null ? 1 : 0;
+    int PinValid = @ViewBag.PinValid != null ? 1 : 0;
+    int errorCode = @ViewBag.errorCode != null ? 1 : 0;
+    int SnC_photo = @ViewBag.photo_url != null ? 0 : 1;
+    string pinNotFound = @ViewBag.PinNotFound;
+    int pinNull = pinNotFound != null ? 1 : 0;
+}
+
+<div class="modal inmodal fade" id="myModal5" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Notification</h4>
+                <small class="font-bold">Please kindly read the information provided here in carefully.</small>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged.
+                </p>
+                <p>
+                    <strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged.
+                </p>
+            </div>
+
+            <div class="modal-footer">
+                @*<button type="button" class="btn btn-white" data-dismiss="modal">Close</button>*@
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Yes, I understand.</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal inmodal fade" id="myModal5" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Notification</h4>
+                <small class="font-bold">Please kindly read the information provided here in carefully.</small>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged.
+                </p>
+                <p>
+                    <strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged.
+                </p>
+            </div>
+
+            <div class="modal-footer">
+                @*<button type="button" class="btn btn-white" data-dismiss="modal">Close</button>*@
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Yes, I understand.</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Recapture Form</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a>Forms</a>
+            </li>
+            <li class="active breadcrumb-item">
+                <strong>Recapture</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+
+@if (ViewBag.HideSearchBar == false)
+{
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>Retirement Savings Account Recapture Form</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li>
+                                    <a href="#" class="dropdown-item">Config option 1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown-item">Config option 2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+
+                        @using (Html.BeginForm("RecaptureForm", "RSA", FormMethod.Get, new { id = "my-form" }))
+                        {
+                            <span style="color: #ff0000">@Html.ValidationSummary(true)</span>
+
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <div class="input-group">
+                                        <input type="text" name="search" class="form-control" placeholder="Search By Pin or Phone Number"> <span class="input-group-btn">
+                                            <button type="submit" class="btn btn-primary">
+                                                Go!
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="wrapper wrapper-content animated fadeInRight" id="recaptureData">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Retirement Savings Account Recapture Form</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a href="#" class="dropdown-item">Config option 1</a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-item">Config option 2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+
+                    @using (Html.BeginForm("RecaptureForm", "RSA", FormMethod.Post, new { id = "form", enctype = "multipart/form-data" }))
+                    {
+                        @Html.HiddenFor(m => m.Id)
+                        @Html.AntiForgeryToken()
+
+                        <h1>RSA</h1>
+                        <section>
+                            <h4><strong class="text-capitalize">SECTION 1: Retirement Savings Account Personal Identification Number (RSA PIN) Holder's Details</strong></h4>
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <div class="form-group">
+                                            <div class="col-md-10">
+                                                <label>AgentID</label><span style="color: #ff0000">*</span>
+                                                @Html.TextBoxFor(m => m.AGENT_CODE, new { @class = "form-control", @required = "required" })
+                                                @Html.ValidationMessageFor(m => m.AGENT_CODE, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    }
+                                   
+                                   
+
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>RSA Status</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.RSAStatusId, AllHelpers.RsaStatus(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.RSAStatusId, "", new { @class = "text-danger" })
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>RSA Pin</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(model => model.RSAPin, new { @class = "form-control", placeholder = "RSA PIN", @required = "required", @readonly = "readonly" })
+                                            @Html.ValidationMessageFor(model => model.RSAPin, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>PFA Name</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownList("PfaName", null, new { @class = "form-control", type = "text", @required = "required" })
+
+
+                                            @*@Html.TextBoxFor(m => m.PFA_Name, new { @class = "form-control", @required = "required" })*@
+                                            @Html.ValidationMessageFor(m => m.PFA_Name, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Is current employer diiferent?</label>
+                                            @Html.DropDownList("EmpoyerName", null, new { @class = "js-example-basic-single", @required = "required" })
+                                            @*@Html.DropDownListFor(m => m.EMPLOYER_FULLNAME, new SelectList(string.Empty, "Value", "Text"), "-- Select State --", new { @class = "js-example-basic-single" })*@
+                                            @Html.ValidationMessageFor(m => m.EMPLOYER_FULLNAME, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Current Employer</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.EMPLOYER_FULLNAME, new { @class = "form-control", @required = "required", @readonly = "readonly" })
+                                            @Html.ValidationMessageFor(m => m.EMPLOYER_FULLNAME, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Employer Code</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.Employer_Code, new { @class = "form-control", @required = "required", @readonly = "readonly" })
+                                            @Html.ValidationMessageFor(m => m.Employer_Code, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <label>   Other RSA PINs (If Any)</label>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>PINs</label>
+                                            @Html.TextBoxFor(m => m.FormerPin1, new { @class = "form-control", placeholder = "Former RSA PIN 1" })
+                                            @Html.ValidationMessageFor(m => m.FormerPin1, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>PFA NAME</label>
+                                            @Html.TextBoxFor(m => m.FormerPFA1, new { @class = "form-control", placeholder = "Former PFA 1" })
+                                            @Html.ValidationMessageFor(m => m.FormerPFA1, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>PINs</label>
+                                            @Html.TextBoxFor(m => m.FormerPin2, new { @class = "form-control", placeholder = "Former RSA PIN 2" })
+                                            @Html.ValidationMessageFor(m => m.FormerPin2, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>PFA NAME</label>
+                                            @Html.TextBoxFor(m => m.FormerPFA2, new { @class = "form-control", placeholder = "Former PFA 2" })
+                                            @Html.ValidationMessageFor(m => m.FormerPFA2, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>PINs</label>
+                                            @*@Html.DropDownListFor(m => m.EMPLOYER_FULLNAME, AllHelpers.GetCountries(), "-- Select --", new { @class = "chosen-select", tabindex = "2", @required = "required" })*@
+
+                                            @Html.TextBoxFor(m => m.FormerPin3, new { @class = "form-control", placeholder = "Former RSA PIN 3" })
+                                            @Html.ValidationMessageFor(m => m.FormerPin3, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>PFA NAME</label>
+                                            @Html.TextBoxFor(m => m.FormerPFA3, new { @class = "autocomplete-with-hidden form-control", data_provide = "typeahead", data_source = Url.Action("GetEmployerDetails"), placeholder = "Former PFA 3" })
+                                            @Html.ValidationMessageFor(m => m.FormerPFA3, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </section>
+                        <h1>Personal Data</h1>
+                        <section>
+                            <h4><strong>SECTION 2: Personal Data</strong></h4>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Title</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.TitleId, AllHelpers.GetTitle(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.TitleId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Surname</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.SURNAME, new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.SURNAME, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>First Name</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.FIRSTNAME, new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.FIRSTNAME, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Middle Name</label>
+                                            @Html.TextBoxFor(m => m.OTHERNAMES, new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.OTHERNAMES, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Maiden/Former Name</label>
+                                            @Html.TextBoxFor(m => m.MaidenName, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.MaidenName, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Gender</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.GenderId, AllHelpers.GetGender(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(model => model.GenderId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Marital Status</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.MARITAL_STATUSId, AllHelpers.GetMaritalStatus(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(model => model.MARITAL_STATUSId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Mobile No:</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.Mobile_Phone, new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.Mobile_Phone, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Nationality</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.NATIONALITYId, AllHelpers.GetCountries(), "-- Select --", new { @class = "chosen-select", tabindex = "2", @required = "required" })
+                                            @Html.ValidationMessageFor(model => model.NATIONALITYId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>State Of Origin (If Nationality is Nigerian)</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.STATE_OF_ORIGINId, AllHelpers.GetAllState(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.STATE_OF_ORIGINId, "", new { @class = "text-danger" })
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Local Goverment Area of Origin</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.LGA_of_OriginId, AllHelpers.GetAllLGAs(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.LGA_of_Origin, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" id="data_1">
+                                        <div class="col-md-10">
+                                            <label>Date Of Birth</label><span style="color: #ff0000">*</span>
+                                            <div class="input-group date">
+                                                @if (@ViewBag.Date == 1)
+                                                {
+                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>@Html.TextBoxFor(m => m.DATE_OF_BIRTH, new { @Value = Model.DATE_OF_BIRTH.Value.ToShortDateString(), @class = "form-control", placeholder = "Enter Date Of Birth", @required = "required" })
+                                                }
+                                                else
+                                                {
+                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>@Html.TextBoxFor(m => m.DATE_OF_BIRTH, new { @class = "form-control", placeholder = "Enter Date Of Birth", @required = "required" })
+                                                }
+                                                @Html.ValidationMessageFor(m => m.DATE_OF_BIRTH, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Place Of Birth (City)</label>
+                                            @Html.TextBoxFor(m => m.Place_of_Birth, new { @class = "form-control", placeholder = "Enter Place Of Birth", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.Place_of_Birth, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>National Identity Number (NIN)</label><span style="color: #ff0000">*</span>
+
+                                            @Html.TextBoxFor(m => m.NIN, new { @class = "form-control", type = "number", placeholder = "Enter National Identity Number (NIN)", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.NIN, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Bank Verification Number (BVN)</label>
+
+                                            @Html.TextBoxFor(m => m.BVN, new { @class = "form-control", type = "number", placeholder = "Enter Bank Verification Number" })
+                                            @Html.ValidationMessageFor(m => m.BVN, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            @if (string.IsNullOrEmpty(ViewBag.Photo_url))
+                                            {
+                                                <img id="photo" src="~/Content/Template/assets/img/avator/default-avatar.png" width="150" height="150" />
+                                                <input type="file" name="PhotoFileBase" id="FileBase" accept=".jpg,.jpeg" required onchange="showMyImage(this, 'photo')">
+                                                <label>upload passport</label><span style="color: #ff0000">* </span>
+                                                <label style="color: #ff0000">(File size should not exceed 1mb)</label>
+                                            }
+                                            else
+                                            {
+                                                <img id="photo" src="@Url.Content("~"+ViewBag.Photo_url )" width="150" height="150" />
+                                                <input type="file" name="PhotoFileBase" id="FileBase1" accept=".jpg,.jpeg" required onchange="showMyImage(this, 'photo' )">
+                                                <label>upload passport</label><span style="color: #ff0000">* </span>
+                                                <label style="color: #ff0000">(File size should not exceed 1mb)</label>
+                                            }
+
+
+
+                                        </div>
+                                        <div class="form-group">
+                                            @if (string.IsNullOrEmpty(ViewBag.Signatur_url))
+                                            {
+                                                <img id="signature" src="~/Content/Template/assets/img/avator/signature_image.jpg" width="150" height="150" />
+                                            }
+                                            else
+                                            {
+                                                <img id="signature" src="@ViewBag.Signatur_url" width="150" height="150" />
+
+                                            }
+                                            <input type="file" name="SignatureFileBase" id="FileBase2" accept=".jpg,.jpeg" required onchange="showMyImage(this, 'signature')">
+                                            <label>upload signature</label><span style="color: #ff0000">*</span>
+                                            <label style="color: #ff0000">(File size should not exceed 1mb)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>Residential Address</h5><hr />
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Location - Nigeria or Abroad</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.Residential_Location, AllHelpers.Location(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.Residential_Location, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>House No./Building No</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.Residential_Building_No, new { @class = "form-control", type = "number", placeholder = "Enter Residential Building No:", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.Residential_Building_No, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Street Name</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.Residential_Address, new { @class = "form-control", placeholder = "Enter Residential Address", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.Residential_Address, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Village/Town/City</label>
+                                            @Html.TextBoxFor(m => m.City_of_residence, new { @class = "form-control", placeholder = "Enter City of Residence" })
+                                            @Html.ValidationMessageFor(m => m.City_of_residence, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Country of Residence Code</label><span style="color: #ff0000">*</span>
+
+                                            @Html.DropDownListFor(m => m.Country_of_residenceId, AllHelpers.GetCountries(), "-- Select --", new { @class = "chosen-select", tabindex = "2", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.Country_of_residenceId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>State of Residence Code</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.State_of_residenceId, AllHelpers.GetAllState(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.State_of_residenceId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Local Government Area Code</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.LGA_of_ResidenceId, AllHelpers.GetAllLGAs(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.LGA_of_Residence, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Personal Email Address</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.Personal_Email, new { @class = "form-control", placeholder = "Enter Email", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.Personal_Email, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>Correspondence Address (Where you would want correspondence sent to)</h5><hr />
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Building No.</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.Correspondence_Building_No, new { @class = "form-control", type="number", placeholder = "Enter Correspondence Building No", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.Correspondence_Building_No, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Street Name</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.Correspondence_Address, new { @class = "form-control", placeholder = "Enter Correspondence Address", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.Correspondence_Address, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Village/Town/City</label>
+                                            @Html.TextBoxFor(m => m.Correspondence_City, new { @class = "form-control", placeholder = "Enter Correspondenece City" })
+                                            @Html.ValidationMessageFor(m => m.Correspondence_City, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Country</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.Correspondence_CountryId, AllHelpers.GetCountries(), "-- Select --", new { @class = "chosen-select", tabindex = "2", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.Correspondence_CountryId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>State</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.Correspondence_StateId, AllHelpers.GetAllState(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.Correspondence_StateId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Local Government Area</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.Correspondence_LGAId, AllHelpers.GetAllLGAs(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.Correspondence_LGA, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Zip Code</label>
+                                            @Html.TextBoxFor(m => m.Correspondence_ZipCode, new { @class = "form-control", placeholder = "Enter Details" })
+                                            @Html.ValidationMessageFor(m => m.Correspondence_ZipCode, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Correspondenece Mobile No. (Country Code + Mobile Number)</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.Correspondenece_Mobile_No, new { @type = "Number", @class = "form-control", placeholder = "Enter Correspondence Mobile Number", @required = "required", minlength = 7 })
+                                            @Html.ValidationMessageFor(m => m.Correspondenece_Mobile_No, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <h1>Employment Record</h1>
+                        <section>
+                            <h4><strong>SECTION 3: Employment Record</strong></h4><hr />
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Sector Classification</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.SectorClassificationId, AllHelpers.GetSectorClassification(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.SectorClassificationId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Employer Under IPPIS ?</label>
+                                            @Html.DropDownListFor(m => m.IsEmployerUnderIPPIS, AllHelpers.EmployerUnderIPPIS(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.IsEmployerUnderIPPIS, "", new { @class = "text-danger" })
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="data_1">
+                                        <div class="col-md-10">
+                                            <label>Date Employee Joined IPPIS</label>
+                                            <div class="input-group date">
+                                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>@Html.TextBoxFor(m => m.DateEmployeeJoinedIPPIS, new { @class = "form-control", placeholder = "Enter Date Employer Joined IPPIS" })
+                                                @Html.ValidationMessageFor(m => m.DateEmployeeJoinedIPPIS, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Employee's IPPIS No</label>
+                                            @Html.TextBoxFor(m => m.EmployeeIPPISNo, new { @class = "form-control", placeholder = "Enter Details" })
+                                            @Html.ValidationMessageFor(m => m.EmployeeIPPISNo, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Employer FullName</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.EMPLOYER_FULLNAME, new { @class = "form-control", placeholder = "Enter Details", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.EMPLOYER_FULLNAME, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Building No.</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.Employer_Building_No, new { @class = "form-control", placeholder = "Enter Details", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.Employer_Building_No, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Employer Address</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.EMPLOYER_ADDRESS, new { @class = "form-control", placeholder = "Enter Details", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.EMPLOYER_ADDRESS, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Location - Nigeria or Abroad</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.Employer_Country_Location, AllHelpers.Location(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.Employer_Country_Location, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                   
+                                    @*<div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Street Name</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.EMPLOYER_ADDRESS, new { @class = "form-control", placeholder = "Enter Details", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.EMPLOYER_ADDRESS, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>*@
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Village/Town/City</label>
+                                            @Html.TextBoxFor(m => m.Employer_City, new { @class = "form-control", placeholder = "Enter Details", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.Employer_City, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Country Code</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.Employer_CountryId, AllHelpers.GetCountries(), "-- Select --", new
+                                       {
+                                           @class = "chosen-select",
+                                           tabindex = "2",
+                                           @required = "required"
+                                       })
+                                            @Html.ValidationMessageFor(m => m.Employer_CountryId, "", new { @class = "text-danger" })
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>State Code</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.Employer_StateId, AllHelpers.GetAllState(), "-- Select --", new
+                                       {
+                                           @class = "form-control",
+                                           @required = "required"
+                                       })
+                                            @Html.ValidationMessageFor(m => m.Employer_StateId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Local Government Area Code</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.Employer_LGAId, AllHelpers.GetAllLGAs(), "-- Select --", new
+                                       {
+                                           @class = "form-control"@*, @required = "required"*@ })
+                                            @Html.ValidationMessageFor(m => m.Employer_LGA, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Employer's Mobile No. (Country Code + Mobile No)</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.Employer_Mobile_No, new { @class = "form-control", placeholder = "Enter Details", @required = "required", minlength = 7 })
+                                            @Html.ValidationMessageFor(m => m.Employer_Mobile_No, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Nature of Business (For Informal Sector Employee Only)</label>
+                                            @Html.TextBoxFor(m => m.Employer_Nature_of_Business, new { @class = "form-control", placeholder = "Enter Details" })
+                                            @Html.ValidationMessageFor(m => m.Employer_Nature_of_Business, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Employee ID/No. (Public, Private & Cross-Border Employee's)</label>
+                                            @Html.TextBoxFor(m => m.Employee_IDNO, new { @class = "form-control", placeholder = "Enter Details" })
+                                            @Html.ValidationMessageFor(m => m.Employee_IDNO, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Service ID/No. (Police & Paramilitary Only)</label>
+                                            @Html.TextBoxFor(m => m.Employer_Service_No, new { @class = "form-control", placeholder = "Enter Details" })
+                                            @Html.ValidationMessageFor(m => m.Employer_Service_No, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Designation Rank</label>
+                                            @Html.TextBoxFor(m => m.Designation_Rank, new { @class = "form-control", placeholder = "Enter Details" })
+                                            @Html.ValidationMessageFor(m => m.Designation_Rank, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Official Email Address (If Any)</label>
+                                            @Html.TextBoxFor(m => m.Employer_Official_Email, new { @class = "form-control", placeholder = "Enter Details" })
+                                            @Html.ValidationMessageFor(m => m.Employer_Official_Email, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="data_1">
+                                        <div class="col-md-10">
+                                            <label>Date Of First Appointment (FG & State Employees Only)</label>
+                                            <div class="input-group date">
+                                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>@Html.TextBoxFor(m => m.Date_Of_First_Appointment, new { @class = "form-control", placeholder = "Enter Details" })
+                                                @Html.ValidationMessageFor(m => m.Date_Of_First_Appointment, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" id="data_1">
+                                        <div class="col-md-10">
+                                            <label>Date Of Current Employment</label>
+                                            <div class="input-group date">
+                                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>@Html.TextBoxFor(m => m.Date_of_Current_Employment, new { @class = "form-control", placeholder = "Enter Details" })
+                                                @Html.ValidationMessageFor(m => m.Date_of_Current_Employment, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" id="data_1">
+                                        <div class="col-md-10">
+                                            <label>Date Of Retirement</label>
+                                            <div class="input-group date">
+                                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>@Html.TextBoxFor(m => m.Date_of_retirement, new { @class = "form-control", placeholder = "Enter Details" })
+                                                @Html.ValidationMessageFor(m => m.Date_of_retirement, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" id="data_1">
+                                        <div class="col-md-10">
+                                            <label>Date Of Transfer Of Service (FG & State Employees Only)</label>
+                                            <div class="input-group date">
+                                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>@Html.TextBoxFor(m => m.Date_of_Transfer_of_Service, new { @class = "form-control", placeholder = "Enter Details" })
+                                                @Html.ValidationMessageFor(m => m.Date_of_Transfer_of_Service, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Zip Code</label>
+                                            @Html.TextBoxFor(m => m.Employer_Zip_Code, new { @class = "form-control", placeholder = "Enter Details" })
+                                            @Html.ValidationMessageFor(m => m.Employer_Zip_Code, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </section>
+                        <h1>Salary Structure</h1>
+                        <section id="get">
+                            <h4><strong>SECTION 4: SALARY STRUCTURE</strong></h4><hr />
+                            <h6>(Treasury Funded Agencies Only)</h6>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Harmonised salary structure as at 2004</label>
+                                            @Html.TextBoxFor(m => m.Harmonized_Salary_Structure_As_At_2004, new { @class = "form-control", placeholder = "Enter Details" })
+                                            @Html.ValidationMessageFor(m => m.Harmonized_Salary_Structure_As_At_2004, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>GL as at June 2004</label>
+                                                    @Html.TextBoxFor(m => m.GL_As_At_2004, new { @class = "form-control", placeholder = "Enter Details" })
+                                                    @Html.ValidationMessageFor(m => m.GL_As_At_2004, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Step as at 2004</label>
+                                                    @Html.TextBoxFor(m => m.Step_As_At_2004, new { @class = "form-control", placeholder = "Enter Details" })
+                                                    @Html.ValidationMessageFor(m => m.Step_As_At_2004, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Consolidated Salary Structure as at 2007</label>
+                                            @Html.TextBoxFor(m => m.Consolidated_Salary_Structure_As_At_2007, new { @class = "form-control", placeholder = "Enter Details" })
+                                            @Html.ValidationMessageFor(m => m.Consolidated_Salary_Structure_As_At_2007, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>GL as at June 2007</label>
+                                                    @Html.TextBoxFor(m => m.GL_As_At_2007, new { @class = "form-control", placeholder = "Enter Details" })
+                                                    @Html.ValidationMessageFor(m => m.GL_As_At_2007, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Step as at 2007</label>
+                                                    @Html.TextBoxFor(m => m.Step_As_At_2007, new { @class = "form-control", placeholder = "Enter Details" })
+                                                    @Html.ValidationMessageFor(m => m.Step_As_At_2007, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Enhanced Consolidated Salary Structure as at 2010</label>
+                                            @Html.TextBoxFor(m => m.Enhanced_Consolidated_Salary_Structure_As_At_2010, new { @class = "form-control", placeholder = "Enter Details" })
+                                            @Html.ValidationMessageFor(m => m.Enhanced_Consolidated_Salary_Structure_As_At_2010, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>GL as at June 2010</label>
+                                                    @Html.TextBoxFor(m => m.GL_As_At_2010, new { @class = "form-control", placeholder = "Enter Details" })
+                                                    @Html.ValidationMessageFor(m => m.GL_As_At_2010, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Step as at 2010</label>
+                                                    @Html.TextBoxFor(m => m.Step_As_At_2010, new { @class = "form-control", placeholder = "Enter Details" })
+                                                    @Html.ValidationMessageFor(m => m.Step_As_At_2010, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Enhanced Consolidated Salary Structure as at 2013</label>
+                                            @Html.TextBoxFor(m => m.Enhanced_Consolidated_Salary_Structure_As_At_2013, new { @class = "form-control", placeholder = "Enter Details" })
+                                            @Html.ValidationMessageFor(m => m.Enhanced_Consolidated_Salary_Structure_As_At_2013, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>GL as at June 2013</label>
+                                                    @Html.TextBoxFor(m => m.GL_As_At_2013, new { @class = "form-control", placeholder = "Enter Details" })
+                                                    @Html.ValidationMessageFor(m => m.GL_As_At_2013, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Step as at 2013</label>
+                                                    @Html.TextBoxFor(m => m.Step_As_At_2013, new { @class = "form-control", placeholder = "Enter Details" })
+                                                    @Html.ValidationMessageFor(m => m.Step_As_At_2013, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Enhanced Consolidated Salary Structure as at 2016</label>
+                                            @Html.TextBoxFor(m => m.Enhanced_Consolidated_Salary_Structure_As_At_2016, new { @class = "form-control", placeholder = "Enter Details" })
+                                            @Html.ValidationMessageFor(m => m.Enhanced_Consolidated_Salary_Structure_As_At_2016, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>GL as at June 2016</label>
+                                                    @Html.TextBoxFor(m => m.GL_As_At_2016, new { @class = "form-control", placeholder = "Enter Details" })
+                                                    @Html.ValidationMessageFor(m => m.GL_As_At_2016, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Step as at 2016</label>
+                                                    @Html.TextBoxFor(m => m.Step_As_At_2016, new { @class = "form-control", placeholder = "Enter Details" })
+                                                    @Html.ValidationMessageFor(m => m.Step_As_At_2016, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Current Salary Structure (Eg. ENCONTISS)</label>
+                                            @Html.TextBoxFor(m => m.Current_Salary_Structure, new { @class = "form-control", placeholder = "Enter Details" })
+                                            @Html.ValidationMessageFor(m => m.Current_Salary_Structure, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Current GL</label>
+                                                    @Html.TextBoxFor(m => m.Current_GL, new { @class = "form-control", placeholder = "Enter Details" })
+                                                    @Html.ValidationMessageFor(m => m.Current_GL, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <label>Current Step</label>
+                                                    @Html.TextBoxFor(m => m.Current_Step, new { @class = "form-control", placeholder = "Enter Details" })
+                                                    @Html.ValidationMessageFor(m => m.Current_Step, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </section>
+                        <h1>Next of KIn</h1>
+                        <section>
+                            <h4><strong>SECTION 5: Next of Kin's Personal Data</strong></h4><hr />
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Title</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.NOK_TitleId, AllHelpers.GetTitle(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.NOK_TitleId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Surname</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.NOK_SURNAME, new { @class = "form-control", placeholder = "Enter Details", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.NOK_SURNAME, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>First Name</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.NOK_FIRSTNAME, new { @class = "form-control", placeholder = "Enter Details", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.NOK_FIRSTNAME, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Middle Name</label>
+                                            @Html.TextBoxFor(m => m.NOK_MIDDLENAME, new { @class = "form-control", placeholder = "Enter Details" })
+                                            @Html.ValidationMessageFor(m => m.NOK_MIDDLENAME, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Gender</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.NOK_GenderId, AllHelpers.GetGender(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(model => model.NOK_GenderId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Relationship</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.NOK_RELATIONSHIPId, AllHelpers.GetRelationship(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(model => model.NOK_RELATIONSHIPId, "", new { @class = "text-danger" })
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Location - Nigeria or Abroad</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.NOK_Country_Location, AllHelpers.Location(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(model => model.NOK_Country_Location, "", new { @class = "text-danger" })
+
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>NOK House No./Name</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.NOK_ADDRESS, new { @class = "form-control", placeholder = "Enter Details", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.NOK_ADDRESS, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>NOk Village/Town/City</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.NOK_City_of_residence, new { @class = "form-control", placeholder = "Enter Details", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.NOK_City_of_residence, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>NOK State of Residence</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.NOK_State_of_ResidenceId, AllHelpers.GetAllState(), "-- Select --", new { @class = "chosen-select", tabindex = "2", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.NOK_State_of_ResidenceId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>NOK Local Government Area</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.NOK_LGA_of_ResidenceId, AllHelpers.GetAllLGAs(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.NOK_LGA_of_Residence, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>NOk Zip Code</label>
+                                            @Html.TextBoxFor(m => m.NOK_ZIP_CODE, new { @class = "form-control", placeholder = "Enter Details" })
+                                            @Html.ValidationMessageFor(m => m.NOK_ZIP_CODE, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>NOk P.O Box/P.M.B</label>
+                                            @Html.TextBoxFor(m => m.NOK_POBOX, new { @class = "form-control", placeholder = "Enter Details" })
+                                            @Html.ValidationMessageFor(m => m.NOK_POBOX, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>NOK Email</label>
+                                            @Html.TextBoxFor(m => m.NOK_EMail, new { @class = "form-control", placeholder = "Enter Details" })
+                                            @Html.ValidationMessageFor(m => m.NOK_EMail, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>NOK Phone No. (Country Code + Tel./Mobile Number)</label><span style="color: #ff0000">*</span>
+                                            @*<input type="text" name="NOK_MOBILE_PHONE" data-mask="99999999999999" min="11" required/>*@
+                                            @Html.TextBoxFor(m => m.NOK_MOBILE_PHONE, new { @class = "form-control", placeholder = "Enter Details", @required = "required", minlength = 7 })
+                                            @Html.ValidationMessageFor(m => m.NOK_MOBILE_PHONE, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <h1>Beneficiary Personal Data</h1>
+                        <section>
+                            <h4><strong>SECTION 6: Beneficiary Personal Data</strong></h4><hr />
+                            <p>Is Beneficiary same as Next of Kin ? <input type="checkbox" name="Nok" value="Yes" onclick="retriveNOKData();" id="benefit" /></p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group" id="bft">
+                                        <div class="col-md-10">
+                                            <label>Title</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.BENEFICIARY_TitleId, AllHelpers.GetTitle(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.BENEFICIARY_TitleId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="bft">
+                                        <div class="col-md-10">
+                                            <label>Surname</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.BENEFICIARY_SURNAME, new { @class = "form-control", placeholder = "Enter Details", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.BENEFICIARY_SURNAME, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="bft">
+                                        <div class="col-md-10">
+                                            <label>First Name</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.BENEFICIARY_FIRSTNAME, new { @class = "form-control", placeholder = "Enter Details", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.BENEFICIARY_FIRSTNAME, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="bft">
+                                        <div class="col-md-10">
+                                            <label>Middle Name</label>
+                                            @Html.TextBoxFor(m => m.BENEFICIARY_MIDDLENAME, new { @class = "form-control", placeholder = "Enter Details" })
+                                            @Html.ValidationMessageFor(m => m.BENEFICIARY_MIDDLENAME, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" id="bft">
+                                        <div class="col-md-10">
+                                            <label>Gender</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.BENEFICIARY_GenderId, AllHelpers.GetGender(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.BENEFICIARY_GenderId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="bft">
+                                        <div class="col-md-10">
+                                            <label>Relationship</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.BENEFICIARY_RELATIONSHIPId, AllHelpers.GetRelationship(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.BENEFICIARY_RELATIONSHIPId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Bank Verification Number (BVN)</label>
+                                            @Html.TextBoxFor(m => m.BENEFICIARY_BVN, new { @class = "form-control", type = "number", placeholder = "Enter Bank Verification Number" })
+
+
+                                            @Html.ValidationMessageFor(m => m.BENEFICIARY_BVN, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>National Identity Number (NIN)</label>
+
+                                            @Html.TextBoxFor(m => m.BENEFICIARY_NIN, new { @class = "form-control", type = "number", placeholder = "Enter National Identity Number (NIN)" })
+                                            @Html.ValidationMessageFor(m => m.BENEFICIARY_NIN, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group" id="bft">
+                                        <div class="col-md-10">
+                                            <label>House No./Name</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.BENEFICIARY_ADDRESS, new { @class = "form-control", placeholder = "Enter Details", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.NOK_MIDDLENAME, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" id="bft">
+                                        <div class="col-md-10">
+                                            <label>Village/Town/City</label>
+                                            @Html.TextBoxFor(m => m.BENEFICIARY_City_of_residence, new { @class = "form-control", placeholder = "Enter Details" })
+                                            @Html.ValidationMessageFor(m => m.BENEFICIARY_City_of_residence, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="bft">
+                                        <div class="col-md-10">
+                                            <label>State of Residence</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.BENEFICIARY_State_of_ResidenceId, AllHelpers.GetAllState(), "-- Select --", new { @class = "chosen-select", tabindex = "2", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.BENEFICIARY_State_of_ResidenceId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="bft">
+                                        <div class="col-md-10">
+                                            <label>Local Government Area</label><span style="color: #ff0000">*</span>
+                                            @Html.DropDownListFor(m => m.BENEFICIARY_LGA_of_ResidenceId, AllHelpers.GetAllLGAs(), "-- Select --", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.BENEFICIARY_LGA_of_Residence, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Zip Code/Postal Code (If Living abroad)</label>
+                                            @Html.TextBoxFor(m => m.BENEFICIARY_ZIP_CODE, new
+                                       {
+                                           @class = "form-control",
+                                           placeholder = "Enter Details"@*, @required = "required"*@ })
+                                            @Html.ValidationMessageFor(m => m.BENEFICIARY_ZIP_CODE, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" id="bft">
+                                        <div class="col-md-10">
+                                            <label>Email</label>
+                                            @Html.TextBoxFor(m => m.BENEFICIARY_EMail, new { @class = "form-control", placeholder = "Enter Details" })
+                                            @Html.ValidationMessageFor(m => m.BENEFICIARY_EMail, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Phone No. (Country Code + Tel./Mobile Number)</label><span style="color: #ff0000">*</span>
+                                            @Html.TextBoxFor(m => m.BENEFICIARY_MOBILE_PHONE, new { @pattern = "[0-9]{14}", @class = "form-control", placeholder = "Enter Details", @required = "required", minlength = 7 })
+                                            @Html.ValidationMessageFor(m => m.BENEFICIARY_MOBILE_PHONE, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <h1>Required Document</h1>
+                        <section>
+                            <h4><strong>SECTION 7: Required Documents (Formats: .jpg,.png,.jpeg)</strong></h4>
+                            <h5>Please upload any of this documents.</h5>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h4>Birth Certificate</h4>
+                                        <img id="birth" src="~/Content/Template/assets/img/avator/images_placeholder.jpg" width="250" height="150" />
+                                        <input type="file" name="BerthCertFileBase" id="FileBase" accept=".jpg,.png,.jpeg" onchange="showMyImage(this, 'birth')">
+                                        <label>Upload Brith Certificate </label><span style="color: #ff0000"> (File size should not exceed 1mb)</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <h4>National Identity Number</h4>
+                                        <img id="NIN2" src="~/Content/Template/assets/img/avator/images_placeholder.jpg" width="250" height="150" />
+                                        <input type="file" name="NINFileBase" id="FileBase" accept=".jpg,.png,.jpeg" onchange="showMyImage(this, 'NIN2')">
+                                        <label>Upload National Identity Number (NIN)</label><span style="color: #ff0000"> (File size should not exceed 1mb)</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <h4>Staff ID Card</h4>
+                                        <img id="staffIDCard" src="~/Content/Template/assets/img/avator/images_placeholder.jpg" width="250" height="150" />
+                                        <input type="file" name="StaffIDCardFileBase" id="FileBase" accept=".jpg,.png,.jpeg" onchange="showMyImage(this, 'staffIDCard')">
+                                        <label>Upload StaffID Card</label><span style="color: #ff0000"> (File size should not exceed 1mb)</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h4>International Passport</h4>
+                                        <img id="IntlPassport" src="~/Content/Template/assets/img/avator/images_placeholder.jpg" width="250" height="150" />
+                                        <input type="file" name="IntlPassportFileBase" id="FileBase" accept=".jpg,.png,.jpeg" onchange="showMyImage(this, 'IntlPassport')">
+                                        <label>Upload International Passport</label><span style="color: #ff0000"> (File size should not exceed 1mb)</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <h4>Permanent Voter's Card</h4>
+                                        <img id="VotersCard" src="~/Content/Template/assets/img/avator/images_placeholder.jpg" width="250" height="150" />
+                                        <input type="file" name="VotersCardFileBase" id="FileBase" accept=".jpg,.png,.jpeg" onchange="showMyImage(this, 'VotersCard')">
+                                        <label>Upload Voter's Card</label><span style="color: #ff0000"> (File size should not exceed 1mb)</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h4>Letter Of First Appointment</h4>
+                                        <img id="letterOfFirstAppointment" src="~/Content/Template/assets/img/avator/images_placeholder.jpg" width="250" height="150" />
+                                        <input type="file" name="letterOfFirstAppointmentFileBase" id="FileBase" accept=".jpg,.png,.jpeg" onchange="showMyImage(this, 'letterOfFirstAppointment')">
+                                        <label>Upload Letter Of First Appointment</label><span style="color: #ff0000"> (File size should not exceed 1mb)</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <h4>Letter Of Employment </h4>
+                                        <img id="letterOfEmployment" src="~/Content/Template/assets/img/avator/images_placeholder.jpg" width="250" height="150" />
+                                        <input type="file" name="letterOfEmploymentFileBase" id="FileBase" accept=".jpg,.png,.jpeg" onchange="showMyImage(this, 'letterOfEmployment')">
+                                        <label>Upload Letter Of Employment</label><span style="color: #ff0000"> (File size should not exceed 1mb)</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <h4>Transfer / Acceptance of Service</h4>
+                                        <img id="TransferAndAcceptanceOfService" src="~/Content/Template/assets/img/avator/images_placeholder.jpg" width="250" height="150" />
+                                        <input type="file" name="TransferAndAcceptanceOfServiceFileBase" id="FileBase" accept=".jpg,.png,.jpeg" onchange="showMyImage(this, 'TransferAndAcceptanceOfService')">
+                                        <label>Upload Transfer/Acceptance Of Service</label><span style="color: #ff0000"> (File size should not exceed 1mb)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <h1>Finish</h1>
+                        <section>
+
+                            <h2>Terms and Conditions</h2>
+                            <span style="color: #ff0000">*</span><label for="acceptTerms">@Html.CheckBoxFor(m => m.HasAcceptedTnC, new { id = "acceptTerms", @class = "required", onclick = "screenshot();" }) I <span style="font-family:'Berlin Sans FB'"><strong id="TnC"></strong></span> hereby certify that the information provided by me in this form is correct. I further consent and authorise National Identity Management Commission to release my NIN information (as may be required) to the National Pension Commission (PenCom), upon request by my Pension Fund Administrator for the maintenance and operation of my Retirement Savings Account. It is my understanding that PenCom shall exercise due care to ensure that my information is secure and protected.</label>
+                            @*<img id="signature" src="~/Content/Template/assets/img/avator/signature_image.jpg" width="120" height="50" />*@
+                            <div id="display">
+
+                            </div>
+                            <input type="hidden" name="imageCanvas" id="imageCanvas" />
+                        </section>
+                        <button type="submit" class="btn btn-primary btn-sm pull-right" id="SaveContinue" style="display: none">Save & Continue</button>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Styles {
+    @Styles.Render("~/Content/plugins/iCheck/iCheckStyles")
+    @Styles.Render("~/Content/plugins/chosen/chosenStyles")
+    @Styles.Render("~/plugins/toastrStyles")
+    @Styles.Render("~/plugins/wizardStepsStyles")
+    @Styles.Render("~/plugins/select2Styles")
+    @Styles.Render("~/plugins/dataPickerStyles")
+    @Styles.Render("~/plugins/jasnyBootstrapStyles")
+
+    @*<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">*@
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
+
+
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/plugins/wizardSteps")
+    @Scripts.Render("~/plugins/iCheck")
+    @Scripts.Render("~/plugins/chosen")
+    @Scripts.Render("~/plugins/validate")
+    @Scripts.Render("~/plugins/select2")
+    @Scripts.Render("~/plugins/toastr")
+    @Scripts.Render("~/plugins/dataPicker")
+    @Scripts.Render("~/plugins/jasnyBootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
+    @*@Scripts.Render("~/plugins/typehead")*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script src="~/Areas/Scripts/html2canvas.js"></script>
+
+
+
+    <script type="text/javascript">
+        function retriveNOKData(){
+            if ($(document.getElementById("benefit")).is(':checked')) {
+                var Benefi_Surname = $("#NOK_SURNAME").val();
+                var Nok_Title = $("#NOK_TitleId").val();
+                var Nok_FirstName = $("#NOK_FIRSTNAME").val();
+                var Nok_MiddleName = $("#NOK_MIDDLENAME").val();
+                var Nok_Gender = $("#NOK_GenderId").val();
+                var Nok_Relationship = $("#NOK_RELATIONSHIPId").val();
+                var Nok_Country_Location = $("#NOK_Country_Location").val();
+                var Nok_Address = $("#NOK_ADDRESS").val();
+                var NOK_City_of_residence = $("#NOK_City_of_residence").val();
+                var NOK_LGA_of_Residence = $("#NOK_LGA_of_ResidenceId").val();
+                var NOK_State_of_Residence = $("#NOK_State_of_ResidenceId").val();
+                var NOK_ZIP_CODE = $("#NOK_ZIP_CODE").val();
+                var NOK_POBOX = $("#NOK_POBOX").val();
+                var NOK_EMail = $("#NOK_EMail").val();
+                var NOK_MOBILE_PHONE = $("#NOK_MOBILE_PHONE").val();
+                var EmployerId = $("#EmpoyerName").val();
+
+                $("#BENEFICIARY_TitleId").val(Nok_Title);
+                $("#BENEFICIARY_SURNAME").val(Benefi_Surname);
+                $("#BENEFICIARY_FIRSTNAME").val(Nok_FirstName);
+                $("#BENEFICIARY_MIDDLENAME").val(Nok_MiddleName);
+                $("#BENEFICIARY_GenderId").val(Nok_Gender);
+                $("#BENEFICIARY_RELATIONSHIPId").val(Nok_Relationship);
+                $("#BENEFICIARY_ADDRESS").val(Nok_Address);
+
+                $("#BENEFICIARY_City_of_residence").val(NOK_City_of_residence);
+                $("#BENEFICIARY_LGA_of_ResidenceId").val(NOK_LGA_of_Residence);
+                $("#BENEFICIARY_State_of_ResidenceId").val(NOK_State_of_Residence);
+                $("#BENEFICIARY_ZIP_CODE").val(NOK_ZIP_CODE);
+                $("#BENEFICIARY_EMail").val(NOK_EMail);
+                $("#BENEFICIARY_MOBILE_PHONE").val(NOK_MOBILE_PHONE);
+
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetFullEmployerDetails")', // Calling json method
+                    dataType: 'json',
+                    data: { id: $("#EmpoyerName").val() },
+                    // Get Selected Country ID.
+                    success: function (data) {
+                        $("#EMPLOYER_FULLNAME").val(data.NAME);
+                        $("#EMPLOYER_ADDRESS").val(data.ADDRESS);
+                        $("#Employer_Building_No").val(data.ADDRESS);
+                        $("#Employer_Code").val(data.RCNO);
+
+                    },
+                    error: function (ex) {
+                        alert('Failed to retrieve states.' + ex);
+                    }
+                });
+
+            }else{
+                $("#BENEFICIARY_TitleId").val('');
+                $("#BENEFICIARY_SURNAME").val('');
+                $("#BENEFICIARY_FIRSTNAME").val('');
+                $("#BENEFICIARY_MIDDLENAME").val('');
+                $("#BENEFICIARY_GenderId").val('');
+                $("#BENEFICIARY_RELATIONSHIPId").val('');
+                $("#BENEFICIARY_ADDRESS").val('');
+
+                $("#BENEFICIARY_City_of_residence").val('');
+                $("#BENEFICIARY_LGA_of_Residence").val('');
+                $("#BENEFICIARY_State_of_ResidenceId").val('');
+                $("#BENEFICIARY_ZIP_CODE").val('');
+                $("#BENEFICIARY_EMail").val('');
+                $("#BENEFICIARY_MOBILE_PHONE").val('');
+            }
+
+
+
+
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#recaptureData').hide();
+
+
+            $("#wizard").steps();
+            $("#form").steps({
+                bodyTag: "section",
+                onStepChanging: function (event, currentIndex, newIndex) {
+                    // Always allow going backward even if the current step contains invalid fields!
+                    if (currentIndex > newIndex) {
+                        return true;
+                    }
+
+                    // Forbid suppressing "Warning" step if the user is to young
+                    if (newIndex === 3 && Number($("#age").val()) < 18) {
+                        return false;
+                    }
+
+
+
+                    var form = $(this);
+
+                    // Clean up if user went backward before
+                    if (currentIndex < newIndex) {
+                        // To remove error styles
+                        $(".body:eq(" + newIndex + ") label.error", form).remove();
+                        $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
+                    }
+
+                    // Disable validation on fields that are disabled or hidden.
+                    form.validate().settings.ignore = ":disabled,:hidden";
+
+                    // Start validation; Prevent going forward if false
+                    return form.valid();
+                },
+                onStepChanged: function (event, currentIndex, priorIndex) {
+                    // Suppress (skip) "Warning" step if the user is old enough.
+                    if (currentIndex === 2 && Number($("#age").val()) >= 18) {
+                        $(this).steps("next");
+                    }
+
+                    // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
+                    if (currentIndex === 2 && priorIndex === 3) {
+                        $(this).steps("previous");
+                    }
+
+                    // Show the Save and Continue button if current is Employement Details tab
+
+                    if(currentIndex === 2){
+                        $("#SaveContinue").show();
+                    }
+
+                    if (@SnC_photo === 0 && currentIndex === 1)
+                    {
+                        document.getElementById("FileBase1").required = false;
+                        document.getElementById("FileBase2").required = false;
+
+                    }
+
+                    if (currentIndex === 7){
+                        $("#SaveContinue").hide();
+
+                        var FirstName = $("#FIRSTNAME").val();
+                        var MiddleName = $("#MIDDLENAME").val();
+                        var Surname = $("#SURNAME").val();
+
+                        $("#TnC").append(Surname +" " + FirstName)
+
+                        var Benefi_Surname = $("#NOK_SURNAME").val();
+                        var Nok_Title = $("#NOK_TitleId").val();
+                        var Nok_FirstName = $("#NOK_FIRSTNAME").val();
+                        var Nok_MiddleName = $("#NOK_MIDDLENAME").val();
+                        var Nok_Gender = $("#NOK_GenderId").val();
+                        var Nok_Relationship = $("#NOK_RELATIONSHIPId").val();
+                        var Nok_Country_Location = $("#NOK_Country_Location").val();
+                        var Nok_Address = $("#NOK_ADDRESS").val();
+                        var NOK_City_of_residence = $("#NOK_City_of_residence").val();
+                        var NOK_LGA_of_Residence = $("#NOK_LGA_of_ResidenceId").val();
+                        var NOK_State_of_Residence = $("#NOK_State_of_ResidenceId").val();
+                        var NOK_ZIP_CODE = $("#NOK_ZIP_CODE").val();
+                        var NOK_POBOX = $("#NOK_POBOX").val();
+                        var NOK_EMail = $("#NOK_EMail").val();
+                        var NOK_MOBILE_PHONE = $("#NOK_MOBILE_PHONE").val();
+                        var EmployerId = $("#EmpoyerName").val();
+
+
+                    }
+
+
+
+                },
+                onFinishing: function (event, currentIndex) {
+                    var form = $(this);
+
+
+                    // Disable validation on fields that are disabled.
+                    // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
+                    form.validate().settings.ignore = ":disabled";
+
+                    // Start validation; Prevent form submission if false
+                    return form.valid();
+                },
+                onFinished: function (event, currentIndex) {
+                    var form = $(this);
+
+                    // Submit form input
+                    form.submit();
+                }
+            }).validate({
+                errorPlacement: function (error, element) {
+                    element.before(error);
+                },
+                rules: {
+                    confirm: {
+                        equalTo: "#password"
+                    }
+                }
+            });
+            $('#data_1 .input-group.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true
+            });
+
+            $('#data_2 .input-group.date').datepicker({
+                startView: 1,
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true
+            });
+
+            $('#data_3 .input-group.date').datepicker({
+                startView: 2,
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true
+            });
+
+            $('#data_4 .input-group.date').datepicker({
+                minViewMode: 1,
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true,
+                todayHighlight: true
+            });
+
+            $(".select2_demo_1").select2();
+            $(".select2_demo_2").select2();
+            $(".select2_demo_3").select2({
+                placeholder: "Select a state",
+                allowClear: true
+            });
+
+            $('.chosen-select').chosen({ width: "100%" });
+
+
+
+            $(".js-example-basic-single").select2({
+                ajax: {
+                    url: "@Url.Action("GetEmployerDetails")",
+                    dataType: 'json',
+                    delay: 250,
+                    data: function (params) {
+                        return {
+                            q: params.term, // search term
+                            page: params.page
+                        };
+                    },
+                    processResults: function (data, params) {
+
+                        var d = [];
+
+                        for (var i = data.length - 1; i >= 0; i--) {
+                            d.push({
+                                id: data[i].TRANSID,
+                                text: data[i].NAME
+                            });
+                        }
+                        // parse the results into the format expected by Select2
+                        // since we are using custom formatting functions we do not need to
+                        // alter the remote JSON data, except to indicate that infinite
+                        // scrolling can be used
+                        params.page = params.page || 1;
+                        return {
+                            results: d,
+                            pagination: {
+                                more: (params.page * 30) < data.total_count
+                            }
+                        };
+                    },
+                    cache: true
+                },
+                placeholder: 'Search for employer',
+                escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+                minimumInputLength: 1,
+                templateResult: formatRepo,
+                templateSelection: formatRepoSelection
+            });
+
+            function formatRepo (request) {
+                if (request.loading) {
+                    return request.text;
+                }
+                var markup = "<option value='" + request.id + "'>" + request.text + "</option>";
+
+                return markup;
+            }
+
+            function formatRepoSelection (request) {
+                return request.text || request.id;
+            }
+
+
+
+        });
+    </script>
+
+    <script type="text/javascript">
+        $("#SaveContinue").click(function () {
+
+            document.getElementById("#BENEFICIARY_TitleId").required = false;
+            document.getElementById("#BENEFICIARY_GenderId").required = false;
+            document.getElementById("#BENEFICIARY_LGA_of_Residence").required = false;
+            document.getElementById("#BENEFICIARY_RELATIONSHIPId").required = false;
+            document.getElementById("#NOK_LGA_of_ResidenceId").required = false;
+            document.getElementById("#NOK_TitleId").required = false;
+
+
+
+
+        });
+
+        //$(document).ready(function () {
+        //    if ($(document.getElementById("acceptTerms")).is(':checked')) {
+        //        // checked
+        //        html2canvas(document.querySelector("#capture")).then(canvas => {
+        //            //document.body.appendChild(canvas)
+
+        //            document.getElementById("image").src= canvas.toDataURL();
+        //        });
+
+        //    }
+        //});
+
+        //$("#acceptTerms").click(function () {
+
+        //    html2canvas(document.querySelector("#capture")).then(canvas => {
+        //        //document.body.appendChild(canvas)
+
+        //        document.getElementById("image").src= canvas.toDataURL();
+        //    });
+
+        //});
+
+    </script>
+
+    <script type='text/javascript'>
+        //function screenshot(){
+        //    //html2canvas(document.body).then(function(canvas) {
+        //    //    document.body.appendChild(canvas);
+        //    //});
+
+        //    html2canvas(document.querySelector("#capture")).then(canvas => {
+        //        //document.body.appendChild(canvas)
+
+        //        document.getElementById("image").src= canvas.toDataURL();
+        //    });
+        //}
+
+        function screenshot(){
+            //html2canvas(document.body).then(function(canvas) {
+            //    document.body.appendChild(canvas);
+            //    document.getElementById("image").src= canvas.toDataURL('image/jpeg');
+            //    document.getElementById("signature").src= canvas.toDataURL('image/jpeg');
+            //});
+
+            html2canvas(document.getElementById('recaptureData')).then(function(canvas) {
+                //document.getElementById("image").src= canvas.toDataURL('image/jpeg');
+                //document.body.appendChild(canvas);
+                $("#imageCanvas").val(canvas.toDataURL('image/jpeg'));
+                // $("#display").append(canvas);
+            });
+        }
+
+
+
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //Country Dropdown Selectedchange event
+            $("#NATIONALITYId").change(function () {
+                $("#STATE_OF_ORIGINId").empty();
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetStates")', // Calling json method
+                    dataType: 'json',
+                    data: { id: $("#NATIONALITYId").val() },
+                    // Get Selected Country ID.
+                    success: function (states) {
+                        $("#STATE_OF_ORIGINId").append('<option value="">-- Select --</option>');
+
+                        $.each(states, function (i, state) {
+                            $('#STATE_OF_ORIGINId').append('<option value="' + state.Value + '">' +
+                                 state.Text + '</option>');
+                        });
+                    },
+                    error: function (ex) {
+                        alert('Failed to retrieve states.' + ex);
+                    }
+                });
+                return false;
+            })
+        });
+
+        $(document).ready(function () {
+            //Country Dropdown Selectedchange event
+            $("#STATE_OF_ORIGINId").change(function () {
+                $("#LGA_of_OriginId").empty();
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetLGAs")', // Calling json method
+                    dataType: 'json',
+                    data: { id: $("#STATE_OF_ORIGINId").val() },
+                    // Get Selected State ID.
+                    success: function (lgas) {
+                        $("#LGA_of_OriginId").append('<option value="">-- Select --</option>');
+
+                        $.each(lgas, function (i, lga) {
+                            $("#LGA_of_OriginId").append('<option value="' + lga.Value + '">' +
+                                 lga.Text + '</option>');
+                        });
+                    },
+                    error: function (ex) {
+                        alert('Failed to retrieve states.' + ex);
+                    }
+                });
+                return false;
+            })
+        });
+
+
+        $(document).ready(function () {
+            //Country Dropdown Selectedchange event
+            $("#Country_of_residenceId").change(function () {
+                $("#State_of_residenceId").empty();
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetStates")', // Calling json method
+                    dataType: 'json',
+                    data: { id: $("#Country_of_residenceId").val() },
+                    // Get Selected Country ID.
+                    success: function (states) {
+                        $("#State_of_residenceId").append('<option value="">-- Select --</option>');
+
+                        $.each(states, function (i, state) {
+                            $('#State_of_residenceId').append('<option value="' + state.Value + '">' +
+                                 state.Text + '</option>');
+                        });
+                    },
+                    error: function (ex) {
+                        alert('Failed to retrieve states.' + ex);
+                    }
+                });
+                return false;
+            })
+        });
+
+        $(document).ready(function () {
+            //Country Dropdown Selectedchange event
+            $("#State_of_residenceId").change(function () {
+                $("#LGA_of_ResidenceId").empty();
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetLGAs")', // Calling json method
+                    dataType: 'json',
+                    data: { id: $("#State_of_residenceId").val() },
+                    // Get Selected State ID.
+                    success: function (lgas) {
+                        $("#LGA_of_ResidenceId").append('<option value="">-- Select --</option>');
+
+                        $.each(lgas, function (i, lga) {
+                            $("#LGA_of_ResidenceId").append('<option value="' + lga.Value + '">' +
+                                 lga.Text + '</option>');
+                        });
+                    },
+                    error: function (ex) {
+                        alert('Failed to retrieve states.' + ex);
+                    }
+                });
+                return false;
+            })
+        });
+
+        $(document).ready(function () {
+            //Country Dropdown Selectedchange event
+            $("#Correspondence_CountryId").change(function () {
+                $("#Correspondence_StateId").empty();
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetStates")', // Calling json method
+                    dataType: 'json',
+                    data: { id: $("#Correspondence_CountryId").val() },
+                    // Get Selected State ID.
+                    success: function (lgas) {
+                        $("#Correspondence_StateId").append('<option value="">-- Select --</option>');
+
+                        $.each(lgas, function (i, lga) {
+                            $("#Correspondence_StateId").append('<option value="' + lga.Value + '">' +
+                                 lga.Text + '</option>');
+                        });
+                    },
+                    error: function (ex) {
+                        alert('Failed to retrieve states.' + ex);
+                    }
+                });
+                return false;
+            })
+        });
+
+        $(document).ready(function () {
+            //Country Dropdown Selectedchange event
+            $("#Correspondence_StateId").change(function () {
+                $("#Correspondence_LGAId").empty();
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetLGAs")', // Calling json method
+                    dataType: 'json',
+                    data: { id: $("#Correspondence_StateId").val() },
+                    // Get Selected State ID.
+                    success: function (lgas) {
+                        $("#Correspondence_LGAId").append('<option value="">-- Select --</option>');
+
+                        $.each(lgas, function (i, lga) {
+                            $("#Correspondence_LGAId").append('<option value="' + lga.Value + '">' +
+                                 lga.Text + '</option>');
+                        });
+                    },
+                    error: function (ex) {
+                        alert('Failed to retrieve states.' + ex);
+                    }
+                });
+                return false;
+            })
+        });
+
+
+        $(document).ready(function () {
+            //Country Dropdown Selectedchange event
+            $("#Employer_CountryId").change(function () {
+                $("#Employer_StateId").empty();
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetStates")', // Calling json method
+                    dataType: 'json',
+                    data: { id: $("#Employer_CountryId").val() },
+                    // Get Selected Country ID.
+                    success: function (states) {
+                        $("#Employer_StateId").append('<option value="">-- Select --</option>');
+
+                        $.each(states, function (i, state) {
+                            $('#Employer_StateId').append('<option value="' + state.Value + '">' +
+                                 state.Text + '</option>');
+                        });
+                    },
+                    error: function (ex) {
+                        alert('Failed to retrieve states.' + ex);
+                    }
+                });
+                return false;
+            })
+        });
+
+        $(document).ready(function () {
+            //Country Dropdown Selectedchange event
+            $("#Employer_StateId").change(function () {
+                $("#Employer_LGAId").empty();
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetLGAs")', // Calling json method
+                    dataType: 'json',
+                    data: { id: $("#Employer_StateId").val() },
+                    // Get Selected State ID.
+                    success: function (lgas) {
+                        $("#Employer_LGAId").append('<option value="">-- Select --</option>');
+
+                        $.each(lgas, function (i, lga) {
+                            $("#Employer_LGAId").append('<option value="' + lga.Value + '">' +
+                                 lga.Text + '</option>');
+                        });
+                    },
+                    error: function (ex) {
+                        alert('Failed to retrieve states.' + ex);
+                    }
+                });
+                return false;
+            })
+        });
+
+
+        $(document).ready(function () {
+            //Country Dropdown Selectedchange event
+            $("#NOK_State_of_ResidenceId").change(function () {
+                $("#NOK_LGA_of_ResidenceId").empty();
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetLGAs")', // Calling json method
+                    dataType: 'json',
+                    data: { id: $("#NOK_State_of_ResidenceId").val() },
+                    // Get Selected Country ID.
+                    success: function (states) {
+                        $("#NOK_LGA_of_ResidenceId").append('<option value="">-- Select --</option>');
+
+                        $.each(states, function (i, state) {
+                            $('#NOK_LGA_of_ResidenceId').append('<option value="' + state.Value + '">' +
+                                 state.Text + '</option>');
+                        });
+                    },
+                    error: function (ex) {
+                        alert('Failed to retrieve states.' + ex);
+                    }
+                });
+                return false;
+            })
+        });
+
+        $(document).ready(function () {
+            //Country Dropdown Selectedchange event
+            $("#BENEFICIARY_State_of_ResidenceId").change(function () {
+                $("#BENEFICIARY_LGA_of_ResidenceId").empty();
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetLGAs")', // Calling json method
+                    dataType: 'json',
+                    data: { id: $("#BENEFICIARY_State_of_ResidenceId").val() },
+                    // Get Selected State ID.
+                    success: function (lgas) {
+                        $("#BENEFICIARY_LGA_of_ResidenceId").append('<option value="">-- Select --</option>');
+                        $.each(lgas, function (i, lga) {
+                            $("#BENEFICIARY_LGA_of_ResidenceId").append('<option value="' + lga.Value + '">' +
+                                 lga.Text + '</option>');
+                        });
+                    },
+                    error: function (ex) {
+                        alert('Failed to retrieve states.' + ex);
+                    }
+                });
+                return false;
+            })
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if (@PinValid === 1) {
+                toastr.success("Ok, @ViewBag.recordFound")
+                toastr.options = {
+                    "closeButton": true,
+                    "debug": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "onclick": null,
+                    "preventDuplicates": true,
+                    "showDuration": "230000",
+                    "hideDuration": "20000",
+                    "timeOut": "220000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+            }
+
+            if(@PinValid === 1){
+                $('#recaptureData').show();
+            }else{
+                $('#recaptureData').hide();
+            }
+
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if (@pinNull === 1) {
+                toastr.success("Ok, @ViewBag.pinNotFound")
+                toastr.options = {
+                    "closeButton": true,
+                    "debug": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "onclick": null,
+                    "preventDuplicates": true,
+                    "showDuration": "230000",
+                    "hideDuration": "20000",
+                    "timeOut": "220000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+            }
+
+            if(@PinValid === 1){
+                $('#recaptureData').show();
+            }else{
+                $('#recaptureData').hide();
+            }
+
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // $('#myModal5').modal({ show: true });
+            if (@errormsg === 1) {
+                toastr.success("Warning, @ViewBag.error")
+                toastr.options = {
+                    "closeButton": true,
+                    "debug": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "onclick": null,
+                    "preventDuplicates": true,
+                    "showDuration": "230000",
+                    "hideDuration": "20000",
+                    "timeOut": "220000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+            }
+            if(@errormsg === 1){
+                $('#recaptureData').hide();
+            }
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // $('#myModal5').modal({ show: true });
+            if (@errorCode2 === 1) {
+                toastr.success("Warning, 'Fail to submit please check the record for any error.'")
+                toastr.options = {
+                    "closeButton": true,
+                    "debug": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "onclick": null,
+                    "preventDuplicates": true,
+                    "showDuration": "230000",
+                    "hideDuration": "20000",
+                    "timeOut": "220000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+            }
+            if(@errorCode2 === 1){
+                $('#recaptureData').show();
+            }
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            // document.getElementById("#NOK_TitleId").required = true;
+
+            if (@warn === 1) {
+                toastr.success("Warning, @ViewBag.RecaptureWarningErrorMsg")
+                toastr.options = {
+                    "closeButton": true,
+                    "debug": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "onclick": null,
+                    "preventDuplicates": true,
+                    "showDuration": "230000",
+                    "hideDuration": "20000",
+                    "timeOut": "220000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+            }
+            if(@warn === 1){
+                $('#recaptureData').hide();
+            }
+            //else{
+            //    $('#recaptureData').show();
+            //}
+
+            if(@hide === 1){
+                $('#recaptureData').hide();
+            }
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        function showMyImage(fileInput, val) {
+            var files = fileInput.files;
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                var fsize = files[i].size;
+                var ftype = files[i].type;
+                var fname = files[i].name;
+                if(fsize > 1048576){
+                    alert("Type :"+ ftype +" | "+ fsize +" bites\n(File: "+fname+") is Too big. Please select another image that is less than 1mb !");
+                }
+
+                var imageType = /image.*/;
+                if (!file.type.match(imageType)) {
+                    continue;
+                }
+                var img = document.getElementById(val);
+                img.file = file;
+                var reader = new FileReader();
+                reader.onload = (function (aImg) {
+                    return function (e) {
+                        aImg.src = e.target.result;
+                    };
+                })(img);
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+
+    @*<script type="text/javascript">
+            $(document).ready(function () {
+                //$('#myModal').modal({ show: true });
+                if (document.cookie.indexOf('visited=true') == -1) {
+                    // load the overlay
+                    $('#myModal5').modal({ show: true });
+
+                    var year = 1000 * 60 * 60 * 24 * 365;
+                    var expires = new Date((new Date()).valueOf() + year);
+                    document.cookie = "visited=true;expires=" + expires.toUTCString();
+
+                }
+            });
+        </script>*@
+}

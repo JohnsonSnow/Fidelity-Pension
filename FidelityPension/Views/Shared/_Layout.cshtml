@@ -1,0 +1,717 @@
+﻿<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+
+    <!-- Page meta, page css, page title etc... -->
+    <!-- Site Tittle -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title - Fidelity Pension</title>
+    <!-- Plugins css Style -->
+    <link href="~/Content/Template/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Content/Template/assets/plugins/no-ui-slider/nouislider.min.css" rel="stylesheet" />
+    <link href="~/Content/Template/assets/plugins/owl-carousel/owl.carousel.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/Template/assets/plugins/owl-carousel/owl.theme.default.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/Template/assets/plugins/fancybox/jquery.fancybox.min.css" rel="stylesheet" />
+    <link href="~/Content/Template/assets/plugins/isotope/isotope.min.css" rel="stylesheet" />
+    <link href="~/Content/Template/assets/plugins/animate/animate.css" rel="stylesheet">
+    <link href="~/Content/Template/assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+    <link href="~/Content/Template/assets/plugins/revolution/css/settings.css" rel="stylesheet">
+    <link href="~/Content/Template/assets/plugins/revolution/css/layers.css" rel="stylesheet">
+    <link href="~/Content/Template/assets/plugins/revolution/css/navigation.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,600,700|Open+Sans:300,400,600,700" rel="stylesheet">
+    <!-- Custom css -->
+    <link href="~/Content/Template/assets/css/kidz.css" id="option_style" rel="stylesheet">
+    <!-- Favicon -->
+    <link href="~/Content/Template/assets/img/favicon.png" rel="shortcut icon">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139871147-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-139871147-2');
+    </script>
+    @*<!-- Docs styles -->
+    <link rel="stylesheet" href="~/Content/dist/demo.css" />
+    <!-- Polyfills -->
+    <script src="https://cdn.polyfill.io/v3/polyfill.min.js?features=es6,Array.prototype.includes,CustomEvent,Object.entries,Object.values,URL,Math.trunc&flags=gated"
+            crossorigin="anonymous"></script>
+
+    <!-- Sharing libary (https://shr.one) -->
+    <script src="https://cdn.shr.one/2.0.0-beta.2/shr.js" crossorigin="anonymous"></script>
+
+    <!-- Preload -->
+    <link rel="preload"
+          as="font"
+          crossorigin
+          type="font/woff2"
+          href="https://cdn.plyr.io/static/fonts/gordita-medium.woff2" />
+    <link rel="preload"
+          as="font"
+          crossorigin
+          type="font/woff2"
+          href="https://cdn.plyr.io/static/fonts/gordita-bold.woff2" />
+
+    <!-- Docs script -->
+    <script src="~/Content/dist/demo.js" crossorigin="anonymous"></script>*@
+
+    @*<script src="https://cdn.plyr.io/3.5.3/plyr.polyfilled.js"></script>*@
+    @*<script src="https://cdn.plyr.io/3.5.3/plyr.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.3/plyr.css" />*@
+</head>
+
+<body id="body" class="up-scroll">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
+    <!-- ====================================
+    ——— PRELOADER
+    ===================================== -->
+    <div id="preloader" class="smooth-loader-wrapper">
+        <div class="smooth-loader">
+            <div class="loader">
+                <span class="dot dot-1"></span>
+                <span class="dot dot-2"></span>
+                <span class="dot dot-3"></span>
+                <span class="dot dot-4"></span>
+            </div>
+        </div>
+    </div>
+    <!-- ====================================
+    ——— HEADER
+    ===================================== -->
+    <!-- HEADER -->
+    <header class="header" id="pageTop">
+        @Html.Partial("_Header")
+    </header>
+
+    <!-- MAIN WRAPPER -->
+    <div class="main-wrapper">
+
+        <!-- SECTION -->
+        <section>
+            <div>
+                @RenderBody()
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        @Html.Partial("_Footer")
+
+    </div>
+
+    <!-- Modal Login -->
+    <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="row rounded-top p-2">
+                    <div class="col-md-4 rounded-top p-2">
+                        <div class="bg-success rounded-top p-2">
+                            <h3 class="text-white font-weight-bold mb-0 ml-2">Micro Pension Login</h3>
+                        </div>
+                        <div class="border rounded-bottom-md border-top-0">
+                            <div class="p-3">
+                                <form action="#" method="POST" role="form">
+                                    <div class="form-group form-group-icon">
+                                        <input type="text" class="form-control border" placeholder="User name" required="">
+                                    </div>
+                                    <div class="form-group form-group-icon">
+                                        <input type="password" class="form-control border" placeholder="Password" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-danger text-uppercase w-100">Log In</button>
+                                    </div>
+                                    <div class="form-group text-center text-secondary mb-0">
+                                        <a class="text-danger" href="#">Forgot password?</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 rounded-top p-2">
+                        <div class="bg-success rounded-top p-2">
+                            <h3 class="text-white font-weight-bold mb-0 ml-2">Employer Login</h3>
+                        </div>
+                        <div class="border rounded-bottom-md border-top-0">
+                            <div class="p-3">
+                                <form action="#" method="POST" role="form">
+                                    <div class="form-group form-group-icon">
+                                        <input type="text" class="form-control border" placeholder="User name" required="">
+                                    </div>
+                                    <div class="form-group form-group-icon">
+                                        <input type="password" class="form-control border" placeholder="Password" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-danger text-uppercase w-100">Log In</button>
+                                    </div>
+                                    <div class="form-group text-center text-secondary mb-0">
+                                        <a class="text-danger" href="#">Forgot password?</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 rounded-top p-2">
+                        <div class="bg-success rounded-top p-2">
+                            <h3 class="text-white font-weight-bold mb-0 ml-2">Employee Login</h3>
+                        </div>
+                        <div class="border rounded-bottom-md border-top-0">
+                            <div class="p-3">
+                                <form action="#" method="POST" role="form">
+                                    <div class="form-group form-group-icon">
+                                        <input type="text" class="form-control border" placeholder="User name" required="">
+                                    </div>
+                                    <div class="form-group form-group-icon">
+                                        <input type="password" class="form-control border" placeholder="Password" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-danger text-uppercase w-100">Log In</button>
+                                    </div>
+                                    <div class="form-group text-center text-secondary mb-0">
+                                        <a class="text-danger" href="#">Forgot password?</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal box for Download Resources -->
+    <div class="modal fade" id="downloadresources" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="bg-success rounded-top p-2">
+                    <h3 class="text-white font-weight-bold mb-0 ml-2">Download Resources</h3>
+                </div>
+                <div class="border rounded-bottom-md border-top-0">
+                    <div class="">
+                        <!-- ====================================
+                        ———	DOWNLOAD RESOURCE DETAILS
+                        ===================================== -->
+                        <section class="py-3 py-md-3">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    RSA Recapture Form |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Accessing Benefits |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Change in Data Form |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Code of Ethics |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Death Notification Form |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    2013 Company Financial Statement |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    2014 Company Financial Statement |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Fidelity Retiree Statement 2013 |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Retirement Savings Account Opening Form |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    NSITF Contribution Transfer Application Form |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Guidelines For Cross-border Pension |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Guidelines For transitional Contribution Fund |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    PENCOM Death Notification Form |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    PENSION Reform Act 2014 |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Programmed Withdrawal Agreement |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Rates of Return on RSA Funds |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Regulation for Transfer of RSAs |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Regulation on Administration of Retirement and Terminal Benefits |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Requirement for Benefits Withdrawal |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Retiree Fund Balance Sheet 2015 | 2016 |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Retiree Fund Balance Sheet 2017 |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Retirement Benefit Consent Form |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Retirement Benefit Consent Form |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    RSA Financial statement 2015 | 2016 |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    RSA Financial statement 2017 |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Company Financial Statement 2015 | 2016 |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Transition contribution fund 2015 | 2016 |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Transition contribution fund 2017 |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Withdrawal Agreement |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Whistle Blowing |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <div>
+                                                <a href="">
+                                                    Statement of Financial Position |
+                                                    <i class="fa fa-download"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+                            </div>
+
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Create Account -->
+    <div class="modal fade" id="modal-createAccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-sm rounded" role="document">
+            <div class="modal-content">
+                <div class="bg-warning rounded-top p-2">
+                    <h3 class="text-white font-weight-bold mb-0 ml-2">Create An Account</h3>
+                </div>
+                <div class="border rounded-bottom-md border-top-0">
+                    <div class="p-3">
+                        <form action="#" method="POST" role="form">
+                            <div class="form-group form-group-icon">
+                                <input type="text" class="form-control border" placeholder="Name" required="">
+                            </div>
+                            <div class="form-group form-group-icon">
+                                <input type="text" class="form-control border" placeholder="User name" required="">
+                            </div>
+                            <div class="form-group form-group-icon">
+                                <input type="text" class="form-control border" placeholder="Phone" required="">
+                            </div>
+                            <div class="form-group form-group-icon">
+                                <input type="password" class="form-control border" placeholder="Password" required="">
+                            </div>
+                            <div class="form-group form-group-icon">
+                                <input type="password" class="form-control border" placeholder="Re-Password" required="">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-danger text-uppercase w-100">Register</button>
+                            </div>
+                            <div class="form-group text-center text-secondary mb-0">
+                                <p class="mb-0">Allready have an account? <a class="text-danger" href="#">Log in</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Enroll -->
+    <div class="modal fade" id="modal-enrolAccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-sm rounded" role="document">
+            <div class="modal-content">
+                <div class="bg-pink rounded-top p-2">
+                    <h3 class="text-white font-weight-bold mb-0 ml-2">Create An Account</h3>
+                </div>
+                <div class="border rounded-bottom-md border-top-0">
+                    <div class="p-3">
+                        <form action="#" method="POST" role="form">
+                            <div class="form-group form-group-icon">
+                                <input type="text" class="form-control border" placeholder="Name" required="">
+                            </div>
+                            <div class="form-group form-group-icon">
+                                <input type="text" class="form-control border" placeholder="User name" required="">
+                            </div>
+                            <div class="form-group form-group-icon">
+                                <input type="text" class="form-control border" placeholder="Phone" required="">
+                            </div>
+                            <div class="form-group form-group-icon">
+                                <input type="password" class="form-control border" placeholder="Password" required="">
+                            </div>
+                            <div class="form-group form-group-icon">
+                                <input type="password" class="form-control border" placeholder="Re-Password" required="">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-pink text-uppercase text-white w-100">Register</button>
+                            </div>
+                            <div class="form-group text-center text-secondary mb-0">
+                                <p class="mb-0">Allready have an account? <a class="text-pink" href="#">Log in</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Products -->
+    <div class="modal fade" id="modal-products" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12">
+                            <img class="img-fluid d-block mx-auto" src="~/Content/Template/assets/img/products/products-preview01.jpg" alt="preview01.jpg">
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <div class="product-single">
+                                <h1>Barbie Racing Car</h1>
+                                <span class="pricing font-size-55">$50 <del>$60</del></span>
+                                <p class="mb-7">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut
+                                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                                </p>
+                                <div class="add-cart mb-0">
+                                    <div class="count-input">
+                                        <input class="quantity btn-primary" type="text" value="1">
+                                        <a class="incr-btn incr-up" data-action="decrease" href="#"><i class="fa fa-caret-up" aria-hidden="true"></i></a>
+                                        <a class="incr-btn incr-down" data-action="increase" href="#"><i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                    </div>
+                                    <button type="button" class="btn btn-danger text-uppercase" onclick="location.href='product-cart.html';">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--scrolling-->
+    <div class="scrolling">
+        <a href="#pageTop" class="back-to-top" id="back-to-top" style="opacity: 1;">
+            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        </a>
+    </div>
+    <!-- Javascript -->
+    <script src="~/Content/Template/assets/plugins/jquery/jquery.min.js"></script>
+    <script src="~/Content/Template/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/Template/assets/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <script src="~/Content/Template/assets/plugins/fancybox/jquery.fancybox.min.js"></script>
+    <script src="~/Content/Template/assets/plugins/isotope/isotope.min.js"></script>
+    <script src="~/Content/Template/assets/plugins/smoothscroll/SmoothScroll.js"></script>
+    <script src="~/Content/Template/assets/plugins/syotimer/jquery.syotimer.min.js"></script>
+    <script src="~/Content/Template/assets/plugins/select2/js/select2.min.js"></script>
+    <script src="~/Content/Template/assets/plugins/no-ui-slider/nouislider.min.js"></script>
+    <script src="~/Content/Template/assets/plugins/lazyestload/lazyestload.js"></script>
+    <script src="~/Content/Template/assets/plugins/velocity/velocity.min.js"></script>
+    <script src="~/Content/Template/assets/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script src="~/Content/Template/assets/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <!-- Load revolution slider only on Local File Systems. The following part can be removed on Server -->
+
+    <script src="~/Content/Template/assets/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="~/Content/Template/assets/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="~/Content/Template/assets/plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+
+    <script src="~/Content/Template/assets/plugins/wow/wow.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDU79W1lu5f6PIiuMqNfT1C6M0e_lq1ECY"></script>
+    <script src="~/Scripts/kidz.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>

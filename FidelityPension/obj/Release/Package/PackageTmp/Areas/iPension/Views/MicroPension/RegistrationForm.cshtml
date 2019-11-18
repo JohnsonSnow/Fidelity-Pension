@@ -1,0 +1,729 @@
+﻿
+@{
+    ViewBag.Title = "RegistrationForm";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+
+<div class="container">
+    <section>
+        <h4><strong class="text-capitalize">SECTION 1: Retirement Savings Account Personal Identification Number (RSA PIN) Holder's Details</strong></h4><hr />
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>RSA Status</label>
+                        <input type="radio" name="RsaStatus" class="" />Active
+                        <input type="radio" name="RsaStatus" class="" /> Retiree
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>RSA Pin</label>
+                        <input type="text" name="RsaPin" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>PFA Name</label>
+                        <input type="text" name="PfaName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Employer Name</label>
+                        <input type="text" name="EmployerName" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h6>Other RSA PINs (If Any)</h6>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>PINs</label>
+                        <input type="text" name="PINs_2" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>PFA NAME</label>
+                        <input type="text" name="PFA_2NAME" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>PINs</label>
+                        <input type="text" name="PINs_3" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>PFA NAME</label>
+                        <input type="text" name="PFA_3NAME" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+    </section>
+    <section>
+        <h4><strong>SECTION 2: Personal Data</strong></h4>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Title</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Surname</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>First Name</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Middle Name</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Maiden/Former Name</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Gender</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Marital Status</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Date Of Birth</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Place Of Birth (City)</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Nationality</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>State Of Origin (If Nationality is Nigerian)</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Local Goverment Area of Origin</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>National Identity Number (NIN)</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>BAnk Verification Number (BVN)</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Residential Address</h5><hr />
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Location - Nigeria or Abroad</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>House No./Street Name</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Village/Town/City</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Local Government Area Code</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>State of Residence Code</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Country of Residence Code</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Personal Email Address</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h5>Correspondence Address (Where you would want correspondence sent to)</h5><hr />
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Building No./Street Name</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Village/Town/City</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Local Government Area</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>State</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Country</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Zip Code</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Mobile No. (Country Code + Mobile Number)</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h4><strong>SECTION 3: Employment Record</strong></h4><hr />
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Sector Classification</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Employer Under IPPIS ?</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Date Employee Joined IPPIS</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Employee's IPPIS No</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Employer FullName</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Employer Address</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Location - Nigeria or Abroad</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Building No./Street Name</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Village/Town/City</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Local Government Area Code</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>State Code</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Country Code</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Zip Code</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Employer's Mobile No. (Country Code + Tel/Mobile Number)</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Nature of Business (For Informal Sector Employee Only)</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Employee ID/No. (Public, Private Sector & Cross-Border Employee's Only)</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Service ID/No. (Police & Paramilitary Only)</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Designation Rank</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Official Email Address (If Any)</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Date Of First Appointment (FG & State Employees Only)</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Date Of Current Employment</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Date Of Retirement</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Date Of Transfer Of Service (FG & State Employees Only)</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <section>
+        <h4><strong>SECTION 4: SALARY STRUCTURE</strong></h4><hr />
+        <h6>(Treasury Funded Agencies Only)</h6>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Harmonised salary structure as at 2004</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Consolidated Salary Structure as at 2007</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-5">
+                        <label>GL as at June 2007</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-5">
+                        <label>Step as at 2007</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Enhanced Consolidated Salary Structure as at 2010</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-5">
+                        <label>GL as at June 2010</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-5">
+                        <label>Step as at 2010</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Enhanced Consolidated Salary Structure as at 2013</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-5">
+                        <label>GL as at June 2013</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-5">
+                        <label>Step as at 2013</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Enhanced Consolidated Salary Structure as at 2016</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-5">
+                        <label>GL as at June 2016</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-5">
+                        <label>Step as at 2016</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Current Salary Structure (Eg. ENCONTISS)</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-5">
+                        <label>Current GL</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-5">
+                        <label>Current Step</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="row">
+            <h4><strong>SECTION 5: Next of Kin's Personal Data</strong></h4><hr />
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Title</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Surname</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>First Name</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Middle Name</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Gender</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Relationship</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Location - Nigeria or Abroad</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>NOK House No./Name</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>NOk Village/Town/City</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>NOK Local Government Area</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>NOK State of Residence</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>NOk Zip Code</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>NOk P.O Box/P.M.B</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>NOK Email</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>NOK Phone No. (Country Code + Tel./Mobile Number)</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="row">
+            <h4><strong>SECTION 6: Beneficiary Personal Data</strong></h4><hr />
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Title</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Surname</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>First Name</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Middle Name</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Gender</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Relationship</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Bank Verification Number (BVN)</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>National Identity Number (NIN)</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>House No./Name</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Village/Town/City</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Local Government Area</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>State of Residence</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Zip Code/Postal Code (If Living abroad)</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Email</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <label>Phone No. (Country Code + Tel./Mobile Number)</label>
+                        <input type="text" name="FirstName" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="row">
+            <h4><strong>SECTION 7: Certification</strong></h4><hr />
+            <div class="col-md-12">
+                <input type="text" name="FirstName" class="col-md-5" />  <p>I hereby certify that the information provided by me in this form is correct. I further consent and authorise Nigeria Inter-Bank Settlement System Plc and National Identity Management Comission to release my BVN and/or NIN information (as maybe required) to the National Pension Commission (PenCom) for the maintenance and operation of my Retirement Savings Account. It is my understanding that PenCom shall exercise due care to ensure that my information is secure and protected.</p>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+

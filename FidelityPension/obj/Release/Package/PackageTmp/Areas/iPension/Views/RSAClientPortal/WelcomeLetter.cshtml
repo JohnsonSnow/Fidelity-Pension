@@ -1,0 +1,211 @@
+﻿
+@{
+    ViewBag.Title = "Welcome Letter";
+    Layout = "~/Areas/iPension/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Client Portal</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a>iPension</a>
+            </li>
+            <li class="active breadcrumb-item">
+                <strong>Welcome Letter</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Welcome Letter <small></small></h5>
+                    <a class="hidden-print">
+                        <i class="fa fa-print pull-right" style="margin-right:80px" onclick="myFunction()"></i>
+                    </a>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a href="#">Config option 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Config option 2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 style="border-bottom: 3px solid #6adb3b">CERTIFICATE OF <span style="color:#6adb3b">REGISTRATION</span></h4>
+                            </div>
+
+                            <div class="col-md-9" style="background-color:#d8d5d5">
+
+                                <div class="form-group" style="margin-top: 5px">
+                                    <label class="col-md-3 control-label"><strong>NAME:</strong> </label><span class="col-md-9">@ViewBag.data.FIRSTNAME @ViewBag.data.OTHERNAMES @ViewBag.data.SURNAME </span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">@*EMPLOYER NAME:*@ </label><span class="col-md-9">@ViewBag.data.EMPLOYER_NAME</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">@*EMPLOYER ADDRESS:*@ </label><span class="col-md-6">@ViewBag.data.CORRESPONDENCE_ADDS1</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">@*EMPLOYER CITY:*@ </label><span class="col-md-6"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">@*DISCRIPTION:*@ </label>
+                                </div>
+                                <div class="row" style="border-top: 10px solid #ffffff">
+                                    <div class="col-md-5">
+                                        <div class="">
+                                            <label class="col-md-3 control-label"><strong>PIN:</strong> </label><span class="col-md-4">@ViewBag.data.PIN</span>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="">
+                                            <label class="col-md-5 control-label"><strong>EMPLOYEE ID:</strong> </label><span class="col-md-6">@ViewBag.data.AGENT_CODE</span>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="">
+                                    
+                                    <img id="photo" src="@Session["photo"]" width="150" height="150" />
+                                </div>
+                            </div>
+                            <div class="container" style="background-color:#d8d5d5; border-top: 10px solid #ffffff">
+                                <div class="col-md-12">
+                                    <label class="col-md-6 control-label"><strong>PFC DETAILS:</strong> </label>
+                                    <div>
+                                        <span class="col-md-6">First Pension Custodian Nigeria Limited.</span>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-md-4">
+                                        <label class="col-md-6 control-label"><strong>ACCOUNT NO:</strong> </label>
+                                        <div>
+                                            <span class="col-md-6">2008709035</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="col-md-6 control-label"><strong>ACCOUNT NAME:</strong> </label>
+                                        <div>
+                                            <span class="col-md-6">FPCNL-RE-FIDELITY PML CONTRIBUTION</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="col-md-6 control-label"><strong>BANK NAME:</strong> </label>
+                                        <div>
+                                            <span class="col-md-6">FIRST BANK OF NIGERIA PLC.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4" style="background-color:#ffffff">
+                                        <h4>CON<span style="color:#6adb3b">TACT</span></h4>
+                                    </div>
+                                    <div class="col-md-4" style="background-color:#ffffff">
+                                        <h4>iPENSION <span style="color:#6adb3b">ACCESS</span></h4>
+                                    </div>
+                                    <div class="col-md-4" style="background-color:#ffffff">
+                                        <h4>OTHER <span style="color:#6adb3b">MEDIA</span></h4>
+                                    </div>
+
+                                    <div class="col-md-4" style="border-right: 5px solid #ffffff">
+                                        <p>Should you have any enquiries please do not hesitate to contact our customer care unit anytime on telephone nos: 01-4626964 and 01-4626968-9 or send email to info@fidelitypensionmanagers.com</p>
+                                    </div>
+                                    <div class="col-md-4" style="border-right: 5px solid #ffffff">
+                                        <h5><strong>ONLINE ACCOUNT CHECK</strong></h5>
+                                        <p>Note that you can view account statement at your convenience following the online procedure below:1. Visit: www.fidelitypensionmanagers.com2. Click 'Check your Balance Online'3.Enter your PIN as Username. For example, PEN100555444444 should be entered as Username4. Enter your default Password (The default password is 16L4O9).View the breakdown of your contributions by clicking on '-statement-' on the right side of your contribution figures.</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h5><strong>FIDELITY PENSION MULTI-LINGUAL CALL CENTER</strong></h5>
+                                        <p>Call 01-2777300 from your mobile, fixed wireless and other phones and listen to the interactive guide. When asked to enter your 12-digit Pension Number, Enter your Retirement Savings Account (RSA) PIN: i.e the 12 digits without 'PEN' e.g 100234567890 and You can also follow us on our social media platforms:</p>
+                                        <h5>Facebook:   @@fidelitypfa</h5>
+                                        <h5>Instagram: @@fidelitypfa</h5>
+                                        <h5>Twitter:       @@fidelitypfa</h5>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="container">
+                                <p style="margin-top: 15px;">With the details above, you have successfully completed your registration formalities with Fidelity Pension. For timely remittance of your contributions, you are required to provide your RSA PIN and our Pension Fund Custodian (PFC) details to your employer. Should you have any cause to change employment, provide same PIN to your new employer as your PIN is for life.</p>
+                                <p>Kindly inform us of this change and any subsequent change in your data with us.</p>
+                                <p>Thank you for choosing Fidelity Pension Managers Ltd as your Pension Fund Administrator (PFA). Welcome to our world of RITE - Reliability, Integrity, Trust and Excellent services.</p>
+
+                                <img src="~/Content/Template/assets/img/ReginaSignature.PNG" />
+                                <h4><strong>Regina</strong> <span style="color:#6adb3b">Akwaegbu</span></h4>
+                                <h4><strong>Head,</strong> <span style="color:#6adb3b">Client Services</span></h4>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var searchText = "@ViewBag.Pin";
+
+            //ASPX page URL to load report
+            var src = '/Reports/WelcomeLetter.aspx?';
+            //We can add parameters here
+            src = src + "searchText=" + searchText
+
+            //We can append more than one parameter like below
+            //var companyId = 1
+            //src = src + "compnayID=" + companyId
+
+            //Create a dynamic iframe here and append this to div tag
+            var iframe = '<iframe id="reportFrame" width="100%" height="800px" scrolling="no" frameborder="0" src="' + src + '" allowfullscreen></iframe>';
+            $("#divReport").html(iframe);
+
+        });
+    </script>
+
+
+    <script>
+        function myFunction() {
+            window.print();
+        }
+    </script>
+}

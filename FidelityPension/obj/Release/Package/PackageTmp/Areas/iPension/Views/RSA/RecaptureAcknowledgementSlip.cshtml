@@ -1,0 +1,458 @@
+﻿@model FidelityPension.Models.Core.Employee
+
+@{
+    ViewBag.Title = "RecaptureAcknowledgementSlip";
+    Layout = "~/Areas/iPension/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Recapture Acknowledgement Slip</h5>
+                    <a class="hidden-print">
+                        <i class="fa fa-print pull-right" style="margin-right:80px" onclick="myFunction()"></i>
+                    </a>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a href="#" class="dropdown-item">Config option 1</a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-item">Config option 2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <table class="table table-bordered table-striped">
+                        <tr style="background-color:#054b08; color:#ffffff">
+                            <td colspan="3"><strong>SECTION 1: RETIREMENT SAVINGS ACCOUNT PERSONAL IDENTIFICATION NUMBER (RSA PIN) HOLDER'S DETAILS</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">RSA STATUS: <strong>@Model.RsaStatus.Value</strong></td>
+                        </tr>
+                        <tr>
+                            <td>RSA PIN: <strong>@Model.RSAPin</strong></td>
+                            <td>PFA NAME: <strong>@Model.PFA_Name</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Employer Name: <strong>@Model.EMPLOYER_FULLNAME</strong></td>
+                            <td>Employer Code: <strong>@Model.Employer_Code</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Other RSA PIN 1: <strong>@Model.FormerPin1</strong></td>
+                            <td>PFA NAME 1: <strong>@Model.FormerPFA1</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Other RSA PIN 2: <strong>@Model.FormerPin2</strong></td>
+                            <td>PFA NAME 2: <strong>@Model.FormerPFA2</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Other RSA PIN 3: <strong>@Model.FormerPin3</strong></td>
+                            <td>PFA NAME 3: <strong>@Model.FormerPFA3</strong></td>
+                        </tr>
+
+                    </table>
+                    <table class="table table-bordered table-striped">
+                        <tr style="background-color:#054b08; color:#ffffff">
+                            <td colspan="3"><strong>SECTION 2: PERSONAL DATA</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Title: <strong>@Model.Title.Value</strong></td>
+                            <td>SURNAME: <strong>@Model.SURNAME</strong></td>
+                            <td rowspan="6">
+                                @if (Model.Photo_url == null)
+                                {
+                                    <img src="~/Content/Template/assets/img/avator/default-avatar.png" width="250" height="250" class="aligncenter" alt="img" />
+                                }
+                                else
+                                {
+                                    <img src="@Model.Photo_url" width="100" height="100" class="block" />
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>FIRST NAME: <strong>@Model.FIRSTNAME</strong></td>
+                            <td>MIDDLE NAME: <strong>@Model.OTHERNAMES</strong></td>
+                        </tr>
+                        <tr>
+                            <td>MAIDEN/FORMER NAME: <strong>@Model.MaidenName</strong></td>
+                            <td>GENDER: <strong>@Model.Gender.Value</strong></td>
+                        </tr>
+                        <tr>
+                            <td>MARITAL STATUS: <strong>@Model.MaritalStatus.Value</strong></td>
+                            <td>DATE OF BIRTH: <strong>@Model.DATE_OF_BIRTH</strong></td>
+                        </tr>
+                        <tr>
+                            <td>PLACE OF BIRTH: <strong>@Model.Place_of_Birth</strong></td>
+                            <td>Bank Verification Number (BVN): <strong>@Model.BVN</strong></td>
+                        </tr>
+                        <tr>
+                            <td>National Identity Number (NIN): <strong>@Model.NIN</strong></td>
+                            <td>International Passport Number: <strong>@Model.Intl_Passport_No</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Nationality: <strong>@Model.Country.Value</strong></td>
+                            <td>State Of Origin: <strong>@Model.State.Value</strong></td>
+                            <td>LGA Of Origin: <strong>@Model.LGA_of_Origin.Value</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Mobile No: <strong>@Model.Mobile_Phone</strong></td>
+                            <td> <strong></strong></td>
+                            <td> <strong></strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>RESIDENTIAL ADDRESS</strong></td>
+                            <td colspan="2"><strong>CORRESPONDENCE ADDRESS</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Location: <strong>@Model.Residential_Location</strong>  <br />House No./Name: <strong>@Model.Residential_Address</strong></td>
+                            <td colspan="2">Building No./Name: <strong>@Model.Correspondence_Address</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Street Name: <strong></strong></td>
+                            <td colspan="2">Street Name:</td>
+                        </tr>
+                        <tr>
+                            <td>Village/Town/City: <strong>@Model.City_of_residence</strong></td>
+                            <td colspan="2">Village/Town/City: <strong>@Model.Correspondence_City</strong></td>
+
+                        </tr>
+                        <tr>
+                            <td>LGA Code: <strong>@Model.LGA_of_Residence.Value</strong></td>
+                            <td colspan="2">LGA: <strong>@Model.Correspondence_LGA.Value</strong></td>
+                        </tr>
+                        <tr>
+                            <td>State Of Residence Code: <strong>@Model.State_of_residence.Value</strong></td>
+                            <td colspan="2">State: <strong>@Model.Correspondence_State.Value</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Country Of Residence Code: <strong>@Model.Country_of_residence.Value</strong></td>
+                            <td colspan="2">Country Code: <strong>@Model.Correspondence_Country.Value</strong></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td colspan="2">Personal Email: <strong>@Model.Personal_Email</strong></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td colspan="2">Correspondence Mobile No.: <strong>@Model.Correspondenece_Mobile_No</strong></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td colspan="2">P.O Box or PMB: <strong></strong></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td colspan="2">Zip Code: <strong>@Model.Correspondence_ZipCode</strong></td>
+                        </tr>
+                    </table>
+                    <table class="table table-bordered table-striped">
+                        <tr style="background-color:#054b08; color:#ffffff">
+                            <td colspan="3"><strong>SECTION 3: EMPLOYMENT RECORD</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Sector: <strong>@Model.SectorClassification.Value</strong></td>
+                            <td>Is Employer Under IPPIS ?: <strong>@Model.IsEmployerUnderIPPIS</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Date Employee Joined IPPIS: <strong>@Model.DateEmployeeJoinedIPPIS</strong></td>
+                            <td>Employee's IPPIS No: <strong>@Model.EmployeeIPPISNo</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Employer Name: <strong>@Model.EMPLOYER_FULLNAME</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Nature Of Business: <strong>@Model.Employer_Nature_of_Business</strong></td>
+                            <td>Employer's Phone: <strong>@Model.Employer_Mobile_No</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Building No./Name: <strong>@Model.Employer_Building_No</strong></td>
+                            <td>Street Name: <strong>@Model.EMPLOYER_ADDRESS</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Employee ID/No: <strong>@Model.Employee_IDNO</strong></td>
+                            <td>Official Email: <strong>@Model.Employer_Official_Email</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Village/Town/City: <strong>@Model.Employer_City</strong></td>
+                            <td>LGA Code: <strong>@Model.Employer_LGA.Value</strong></td>
+                        </tr>
+                        <tr>
+                            <td>State Code: <strong>@Model.Employer_State.Value</strong></td>
+                            <td>Country Code: <strong>@Model.Employer_Country.Value</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Zip Code: <strong>@Model.Employer_Zip_Code</strong></td>
+                            <td>P.O. Box/P.M.B: <strong></strong> </td>
+                        </tr>
+                        <tr>
+                            <td>Date Of First Appointment: <strong>@Model.Date_Of_First_Appointment</strong></td>
+                            <td>Date Of Current Employment: <strong>@Model.Date_of_Current_Employment</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Date Of Retirement: <strong>@Model.Date_of_retirement</strong></td>
+                            <td>Date Of Transfer of Service: <strong>@Model.Date_of_Transfer_of_Service</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Service ID/No.: <strong>@Model.Employer_Service_No</strong></td>
+                            <td>Designation/Rank: <strong>@Model.Designation_Rank</strong></td>
+                        </tr>
+                    </table>
+                    <table class="table table-bordered table-striped">
+                        <tr style="background-color:#054b08; color:#ffffff">
+                            <td colspan="3"><strong>SECTION 4: SALARY STRUCTURE</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Harmonised Salary Structure as at 2004: <strong>@Model.Harmonized_Salary_Structure_As_At_2004</strong></td>
+                            <td>GL as at June 2004: <strong>@Model.GL_As_At_2004</strong></td>
+                            <td>Step as at June 2004: <strong>@Model.Step_As_At_2004</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Consolidated Salary Structure as at 2007: <strong>@Model.Consolidated_Salary_Structure_As_At_2007</strong></td>
+                            <td>GL as at June 2007: <strong>@Model.GL_As_At_2007</strong></td>
+                            <td>Step as at June 2007: <strong>@Model.Step_As_At_2007</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Enhanced Consolidated Salary Structure as at 2010: <strong>@Model.Enhanced_Consolidated_Salary_Structure_As_At_2010</strong></td>
+                            <td>GL as at June 2010: <strong>@Model.GL_As_At_2010</strong></td>
+                            <td>Step as at June 2010: <strong>@Model.Step_As_At_2010</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Enhanced Consolidated Salary Structure as at 2013: <strong>@Model.Enhanced_Consolidated_Salary_Structure_As_At_2013</strong></td>
+                            <td>GL as at June 2013: <strong>@Model.GL_As_At_2013</strong></td>
+                            <td>Step as at June 2013: <strong>@Model.Step_As_At_2013</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Enhanced Consolidated Salary Structure as at 2016: <strong>@Model.Enhanced_Consolidated_Salary_Structure_As_At_2016</strong></td>
+                            <td>GL as at June 2016: <strong>@Model.GL_As_At_2016</strong></td>
+                            <td>Step as at June 2016: <strong>@Model.Step_As_At_2016</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Current Salary Structure: <strong>@Model.Current_Salary_Structure</strong></td>
+                            <td>Current GL: <strong>@Model.Current_GL</strong></td>
+                            <td>Current Step: <strong>@Model.Current_Step</strong></td>
+                        </tr>
+                    </table>
+                    <table class="table table-bordered table-striped">
+                        <tr style="background-color:#054b08; color:#ffffff">
+                            <td colspan="3"><strong>SECTION 5: NEXT OF KIN'S PERSONAL DATA</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Next of Kin's Personal Details</strong></td>
+                            <td><strong>NOK Correspondence Address</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Title: <strong>@Model.NOK_Title.Value</strong></td>
+                            <td>NOK House No./Name: <strong>@Model.NOK_ADDRESS</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Surname: <strong>@Model.NOK_SURNAME</strong></td>
+                            <td>NOK Street Name: <strong>@Model.NOK_ADDRESS</strong></td>
+                        </tr>
+                        <tr>
+                            <td>First Name: <strong>@Model.NOK_FIRSTNAME</strong></td>
+                            <td>NOK Village/Town/City: <strong>@Model.NOK_City_of_residence</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Middle Name: <strong>@Model.NOK_MIDDLENAME</strong></td>
+                            <td>NOK LGA: <strong>@Model.NOK_LGA_of_Residence.Value</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Gender: <strong>@Model.NOk_Gender.Value</strong></td>
+                            <td>NOK State of Residence: <strong>@Model.NOK_State_of_Residence.Value</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Relationship: <strong>@Model.NOK_Relationship.Value</strong></td>
+                            <td>NOK Zip Code: <strong>@Model.NOK_ZIP_CODE</strong></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>NOK Email: <strong>@Model.NOK_EMail</strong></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>NOK Phone No.: <strong>@Model.NOK_MOBILE_PHONE</strong></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>NOK Location: <strong>@Model.NOK_Country_Location</strong></td>
+                        </tr>
+                    </table>
+                    <table class="table table-bordered table-striped">
+                        <tr style="background-color:#054b08; color:#ffffff">
+                            <td colspan="3"><strong>SECTION 6: BENEFICIARY PERSONAL DATA</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Beneficiary Personal Details</strong></td>
+                            <td><strong>Beneficiary Correspondence Address</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Title: <strong>@Model.Beneficiary_Title.Value</strong></td>
+                            <td>House No./Name: <strong>@Model.BENEFICIARY_ADDRESS</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Surname: <strong>@Model.BENEFICIARY_SURNAME</strong></td>
+                            <td>Street Name: <strong>@Model.BENEFICIARY_ADDRESS</strong></td>
+                        </tr>
+                        <tr>
+                            <td>First Name: <strong>@Model.BENEFICIARY_FIRSTNAME</strong></td>
+                            <td>Village/Town/City: <strong>@Model.BENEFICIARY_City_of_residence</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Middle Name: <strong>@Model.BENEFICIARY_MIDDLENAME</strong></td>
+                            <td>LGA: <strong>@Model.BENEFICIARY_LGA_of_Residence.Value</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Gender: <strong>@Model.Beneficiary_Gender.Value</strong></td>
+                            <td>State of Residence: <strong>@Model.BENEFICIARY_State_of_Residence.Value</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Relationship: <strong>@Model.Beneficiary_Relationship.Value</strong></td>
+                            <td>Zip Code/Postal Code: <strong>@Model.BENEFICIARY_ZIP_CODE</strong></td>
+                        </tr>
+                        <tr>
+                            <td>BVN: <strong>@Model.BENEFICIARY_BVN</strong></td>
+                            <td>Email: <strong>@Model.BENEFICIARY_EMail</strong></td>
+                        </tr>
+                        <tr>
+                            <td>NIN: <strong>@Model.BENEFICIARY_NIN</strong></td>
+                            <td>Phone No.: <strong>@Model.BENEFICIARY_MOBILE_PHONE</strong></td>
+                        </tr>
+
+                    </table>
+                    <table class="table table-bordered table-striped">
+                        <tr style="background-color:#054b08; color:#ffffff">
+                            <td colspan="3"><strong>SECTION 7: UPLOADED DOCUMENTS</strong></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @if (@Model.BirthCertificate_Url == null)
+                                {
+                                    <a href="#">Birth Certificate</a>
+                                    <span class="label label-primary">NIL</span>
+                                }
+                                else
+                                {
+                                    <a href="@Url.Content("~"+Model.BirthCertificate_Url)" target="_blank">Birth Certificate</a>
+                                    <span class="label label-primary">Uploaded</span>
+                                }
+                            </td>
+                            <td>
+                                @if (@Model.Intl_Passport_Url == null)
+                                {
+                                    <a href="#">International Passport</a>
+                                    <span class="label label-primary">NIL</span>
+                                }
+                                else
+                                {
+                                    <a href="@Url.Content("~"+Model.Intl_Passport_Url)" target="_blank">International Passport</a>
+                                    <span class="label label-primary">Uploaded</span>
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @if (@Model.Letter_of_First_Appointment_Url == null)
+                                {
+                                    <a href="#">Letter Of First Appointment</a>
+                                    <span class="label label-primary">NIL</span>
+                                }
+                                else
+                                {
+                                    <a href="@Url.Content("~"+Model.Letter_of_First_Appointment_Url)" target="_blank">Letter Of First Appointment</a>
+                                    <span class="label label-primary">Uploaded</span>
+                                }
+                            </td>
+                            <td>
+                                @if (@Model.NIN_Url == null)
+                                {
+                                    <a href="#">National Identity Number</a>
+                                    <span class="label label-primary">NIL</span>
+                                }
+                                else
+                                {
+                                    <a href="@Url.Content("~"+Model.NIN_Url)" target="_blank">National Identity Number</a>
+                                    <span class="label label-primary">Uploaded</span>
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @if (@Model.PermanentVotersCard_Url == null)
+                                {
+                                    <a href="#">Permanent Voter's Card</a>
+                                    <span class="label label-primary">NIL</span>
+                                }
+                                else
+                                {
+                                    <a href="@Url.Content("~"+Model.PermanentVotersCard_Url)" target="_blank">Permanent Voter's Card</a>
+                                    <span class="label label-primary">Uploaded</span>
+                                }
+                            </td>
+                            <td>
+                                @if (@Model.Transfer_Acceptance_of_Service_Url == null)
+                                {
+                                    <a href="#">Transfer / Acceptance of Service</a>
+                                    <span class="label label-primary">NIL</span>
+                                }
+                                else
+                                {
+                                    <a href="@Url.Content("~"+Model.Transfer_Acceptance_of_Service_Url)" target="_blank">Transfer / Acceptance of Service</a>
+                                    <span class="label label-primary">Uploaded</span>
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @if (@Model.StaffIDCard_Url == null)
+                                {
+                                    <a href="#">Staff ID Card</a>
+                                    <span class="label label-primary">NIL</span>
+                                }
+                                else
+                                {
+                                    <a href="@Url.Content("~"+Model.StaffIDCard_Url)" target="_blank">Staff ID Card</a>
+                                    <span class="label label-primary">Uploaded</span>
+                                }
+                            </td>
+                            <td></td>
+                        </tr>
+
+
+                    </table>
+                    <table class="table table-bordered table-striped">
+                        <tr style="background-color:#054b08; color:#ffffff">
+                            <td colspan="3"><strong>SECTION 8: CERTIFICATION</strong></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>I <span style="font-family:'Berlin Sans FB'"><strong>@Model.FIRSTNAME @Model.SURNAME</strong></span> hereby certify that the information provided by me in this form is correct. I further consent and authorise National Identity Management Commission to release my NIN information (as may be required) to the National Pension Commission (PenCom), upon request by my Pension Fund Administrator for the maintenance and operation of my Retirement Savings Account. It is my understanding that PenCom shall exercise due care to ensure that my information is secure and protected.</p>
+                                <p><img src="@Model.Signature_url" width="100" height="100" class="block" /></p>
+                                <p>@Model.DateCreated.ToString("dd/MM/yyyy")</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function myFunction() {
+        window.print();
+    }
+</script>
+

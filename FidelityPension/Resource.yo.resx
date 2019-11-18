@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About_Us" xml:space="preserve">
+    <value>Nipa</value>
+  </data>
+  <data name="Contact_Us" xml:space="preserve">
+    <value>Pe wa</value>
+  </data>
+  <data name="CTA_SubTitle" xml:space="preserve">
+    <value>Sọ fun wa loni</value>
+  </data>
+  <data name="CTA_Title" xml:space="preserve">
+    <value>Ni Ibeere Nipa Micro Ifehinti?</value>
+  </data>
+  <data name="Footer_About_Writeup" xml:space="preserve">
+    <value>Ni Fidelity Pension Managers Limited (Fidelity Pension), a mọ pe iṣakoso ti o dara, eyi ti o jẹ ki awọn ilana ṣiṣe daradara ati ti o munadoko, awọn ọna šiše ati awọn idari; ati, awọn iṣẹ ti o ni kiakia ati awọn didara, ni awọn ibusun ti eto isinmi-ṣiṣe ṣiṣe ṣiṣe daradara.</value>
+  </data>
+  <data name="For_More_Information_Contact_Us" xml:space="preserve">
+    <value>Fun alaye siwaju sii kan si wa</value>
+  </data>
+  <data name="Meet_Our_Board_Of_Directors" xml:space="preserve">
+    <value>Pade Awọn Alakoso Ilana wa</value>
+  </data>
+  <data name="Our_Core_Value" xml:space="preserve">
+    <value>T - Igbẹkẹle, R - Ibọwọ, A - Ibanuje, I - Innovation, T - Teamwork, S - Iyara / Abo</value>
+  </data>
+  <data name="Our_Core_Value_Title" xml:space="preserve">
+    <value>Awọn idiwọn Iwọn wa</value>
+  </data>
+  <data name="Our_Mission" xml:space="preserve">
+    <value>Lati pese awọn iṣẹ ifẹhinti ti o ni ailewu ati funni fun ayọhinti ayọ.</value>
+  </data>
+  <data name="Our_Mission_Title" xml:space="preserve">
+    <value>Ise wa</value>
+  </data>
+  <data name="Our_Vision" xml:space="preserve">
+    <value>Lati jẹ asiwaju ati PFA julọ ti o ni imọran, ṣiṣe iṣakoso owo ifẹkufẹ ni otitọ ati iṣowo.</value>
+  </data>
+  <data name="Our_Vision_Title" xml:space="preserve">
+    <value>Iran wa</value>
+  </data>
+  <data name="PS_Benefit_Administration_SubTitle" xml:space="preserve">
+    <value>RSA ti o mu iṣẹ ti pari tabi ti a ti yọ kuro ati pe ko ti ni eyikeyi</value>
+  </data>
+  <data name="PS_Benefit_Administration_Title" xml:space="preserve">
+    <value>Ipese anfani</value>
+  </data>
+  <data name="PS_Cross_Border_Pension_SubTitle" xml:space="preserve">
+    <value>Ọja yi ṣe iranlọwọ fun awọn oṣiṣẹ ti n jade ni awọn ile-iṣẹ ti a forukọsilẹ ni Ilu NAIJẸ ati awọn ọmọ ilu Naijiria ṣiṣẹ</value>
+  </data>
+  <data name="PS_Cross_Border_Pension_Title" xml:space="preserve">
+    <value>Agbelebu aala Ihinhinti</value>
+  </data>
+  <data name="PS_Micro_Pension_SubTitle" xml:space="preserve">
+    <value>ni iṣeto owo fun awọn iṣẹ ifẹyinti fun awọn eniyan ti ara ẹni ati awọn eniyan ti nṣiṣẹ ni awọn ajọ</value>
+  </data>
+  <data name="PS_Micro_Pension_Title" xml:space="preserve">
+    <value>kekere Ihinhinti</value>
+  </data>
+  <data name="PS_Retirement_Advisory_SubTitle" xml:space="preserve">
+    <value>Boya o ti ni ibeere gbogbogbo tabi ibeere kan ti o jọmọ owo ifẹhinti rẹ, awọn amoye ile wa</value>
+  </data>
+  <data name="PS_Retirement_Advisory_Title" xml:space="preserve">
+    <value>Iwe imọran ifẹyinti</value>
+  </data>
+  <data name="PS_RSA_Short_Note" xml:space="preserve">
+    <value>Gbogbo awọn oṣiṣẹ tabi alabapade labẹ eto iṣẹ ifẹhinti tuntun ni o yẹ lati ṣii RSA ni ori rẹ</value>
+  </data>
+  <data name="PS_Title_RSA" xml:space="preserve">
+    <value>Iwe ifowopamọ Ifowopamọ owo ifẹhinti</value>
+  </data>
+  <data name="PS_Title_Voluntary_Contribution" xml:space="preserve">
+    <value>Ipese Atinuwa</value>
+  </data>
+  <data name="PS_Voluntary_Contribution_Short_Note" xml:space="preserve">
+    <value>Ṣe ifọkasi awọn afikun afikun ti o le pinnu lati ṣafikun si owo ifẹkufẹ rẹ</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Ka siwaju</value>
+  </data>
+  <data name="Slider1_SubTitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Slider1_Title" xml:space="preserve">
+    <value>Atunyẹwo New Micro Pension</value>
+  </data>
+  <data name="Slider2_SubTitle" xml:space="preserve">
+    <value>Ṣiṣe Iwe ifowopamọ Ifowopamọ ti owo ifẹyinti Loni</value>
+  </data>
+  <data name="Slider2_Title" xml:space="preserve">
+    <value>Gbero lati yọ kuro ni ayo</value>
+  </data>
+  <data name="Slider3_SubTitle" xml:space="preserve">
+    <value>Ṣiṣe Iwe ifowopamọ Ifowopamọ ti owo ifẹyinti Loni</value>
+  </data>
+  <data name="Slider3_Title" xml:space="preserve">
+    <value>Kọ lakoko ti o le bayi</value>
+  </data>
+  <data name="Slider4_SubTitle" xml:space="preserve">
+    <value>ọla ati nigbagbogbo pẹlu Iwe-ifowopamọ Iwe ifowopamọ pẹlu Awọn alakoso Ikẹkọ Fidelity.</value>
+  </data>
+  <data name="Slider4_Title" xml:space="preserve">
+    <value>Jeki orin ti nšišẹ loni,</value>
+  </data>
+  <data name="ViewMore" xml:space="preserve">
+    <value>Wo diẹ ẹ sii</value>
+  </data>
+  <data name="Home_Page" xml:space="preserve">
+    <value>iwe ile</value>
+  </data>
+  <data name="Our_Address" xml:space="preserve">
+    <value>adirẹsi wa</value>
+  </data>
+  <data name="Our_Company" xml:space="preserve">
+    <value>ile-iṣẹ wa</value>
+  </data>
+  <data name="Our_Gallery" xml:space="preserve">
+    <value>wa gallery</value>
+  </data>
+  <data name="Our_Products_and_Services" xml:space="preserve">
+    <value>awọn ọja ati iṣẹ wa</value>
+  </data>
+  <data name="Resources" xml:space="preserve">
+    <value>awọn ohun elo</value>
+  </data>
+  <data name="Send_Message" xml:space="preserve">
+    <value>firanṣẹ ifiranṣẹ</value>
+  </data>
+</root>

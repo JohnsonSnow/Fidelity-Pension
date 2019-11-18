@@ -1,0 +1,227 @@
+namespace FidelityPension.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class EmployeeRetrival : DbMigration
+    {
+        public override void Up()
+        {
+            CreateTable(
+                "dbo.Employees",
+                c => new
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    PIN = c.String(),
+                    TitleId = c.Int(nullable: false),
+                    SURNAME = c.String(),
+                    FIRSTNAME = c.String(),
+                    OTHERNAMES = c.String(),
+                    GenderId = c.Int(nullable: false),
+                    Mobile_Phone = c.String(),
+                    MaidenName = c.String(),
+                    DATE_OF_BIRTH = c.DateTime(),
+                    Place_of_Birth = c.String(),
+                    MARITAL_STATUSId = c.Int(nullable: false),
+                    NATIONALITYId = c.Int(nullable: false),
+                    STATE_OF_ORIGINId = c.Int(nullable: false),
+                    LGA_of_OriginId = c.Int(nullable: false),
+                    NIN = c.String(),
+                    NIN_Url = c.String(),
+                    BVN = c.String(maxLength: 11),
+                    Intl_Passport_No = c.String(),
+                    Photo_url = c.String(),
+                    FileNumber = c.String(),
+                    Signature_url = c.String(),
+                    BirthCertificate_Url = c.String(),
+                    Intl_Passport_Url = c.String(),
+                    DriversLicense_Url = c.String(),
+                    PermanentVotersCard_Url = c.String(),
+                    Letter_of_First_Appointment_Url = c.String(),
+                    Transfer_Acceptance_of_Service_Url = c.String(),
+                    StaffIDCard_Url = c.String(),
+                    Letter_of_Employment_Url = c.String(),
+                    Residential_Location = c.String(),
+                    Residential_Address = c.String(),
+                    Country_of_residenceId = c.Int(),
+                    State_of_residenceId = c.Int(),
+                    LGA_of_ResidenceId = c.Int(nullable: false),
+                    City_of_residence = c.String(),
+                    Personal_Email = c.String(),
+                    Correspondence_Address = c.String(),
+                    Correspondence_CountryId = c.Int(),
+                    Correspondence_StateId = c.Int(),
+                    Correspondence_LGAId = c.Int(nullable: false),
+                    Correspondence_ZipCode = c.String(),
+                    Correspondence_City = c.String(),
+                    Correspondenece_Mobile_No = c.String(),
+                    RSAPin = c.String(),
+                    PFA_Name = c.String(),
+                    RSAStatusId = c.Int(nullable: false),
+                    FormerPin1 = c.String(),
+                    FormerPFA1 = c.String(),
+                    FormerPin2 = c.String(),
+                    FormerPFA2 = c.String(),
+                    FormerPin3 = c.String(),
+                    FormerPFA3 = c.String(),
+                    SectorClassificationId = c.Int(),
+                    IsEmployerUnderIPPIS = c.Boolean(nullable: false),
+                    DateEmployeeJoinedIPPIS = c.DateTime(),
+                    EmployeeIPPISNo = c.String(),
+                    EMPLOYER_FULLNAME = c.String(),
+                    EMPLOYER_ADDRESS = c.String(),
+                    Employer_Country_Location = c.String(),
+                    Employer_Building_No = c.String(),
+                    Employer_CountryId = c.Int(),
+                    Employer_StateId = c.Int(),
+                    Employer_LGAId = c.Int(nullable: false),
+                    Employer_City = c.String(),
+                    Employer_Mobile_No = c.String(),
+                    Employer_Nature_of_Business = c.String(),
+                    Employee_IDNO = c.String(),
+                    Employer_Code = c.String(),
+                    Employer_Service_No = c.String(),
+                    Designation_Rank = c.String(),
+                    Employer_Official_Email = c.String(),
+                    Date_Of_First_Appointment = c.DateTime(),
+                    Date_of_Current_Employment = c.DateTime(),
+                    Date_of_Transfer_of_Service = c.DateTime(),
+                    Date_of_retirement = c.DateTime(),
+                    Employer_Zip_Code = c.String(),
+                    Harmonized_Salary_Structure_As_At_2004 = c.String(),
+                    GL_As_At_2004 = c.String(),
+                    Step_As_At_2004 = c.String(),
+                    Consolidated_Salary_Structure_As_At_2007 = c.String(),
+                    GL_As_At_2007 = c.String(),
+                    Step_As_At_2007 = c.String(),
+                    Enhanced_Consolidated_Salary_Structure_As_At_2010 = c.String(),
+                    GL_As_At_2010 = c.String(),
+                    Step_As_At_2010 = c.String(),
+                    Enhanced_Consolidated_Salary_Structure_As_At_2013 = c.String(),
+                    GL_As_At_2013 = c.String(),
+                    Step_As_At_2013 = c.String(),
+                    Enhanced_Consolidated_Salary_Structure_As_At_2016 = c.String(),
+                    GL_As_At_2016 = c.String(),
+                    Step_As_At_2016 = c.String(),
+                    Current_Salary_Structure = c.String(),
+                    Current_GL = c.String(),
+                    Current_Step = c.String(),
+                    NOK_TitleId = c.Int(),
+                    NOK_FIRSTNAME = c.String(),
+                    NOK_SURNAME = c.String(),
+                    NOK_MIDDLENAME = c.String(),
+                    NOK_GenderId = c.Int(),
+                    NOK_CountryId = c.Int(),
+                    NOK_Country_Location = c.String(),
+                    NOK_State_of_ResidenceId = c.Int(),
+                    NOK_LGA_of_ResidenceId = c.Int(),
+                    NOK_City_of_residence = c.String(),
+                    NOK_ADDRESS = c.String(),
+                    NOK_RELATIONSHIPId = c.Int(),
+                    NOK_OFFICE_PHONE = c.String(),
+                    NOK_MOBILE_PHONE = c.String(),
+                    NOK_HOME_PHONE = c.String(),
+                    NOK_ZIP_CODE = c.String(),
+                    NOK_POBOX = c.String(),
+                    NOK_EMail = c.String(),
+                    BENEFICIARY_TitleId = c.Int(),
+                    BENEFICIARY_FIRSTNAME = c.String(),
+                    BENEFICIARY_SURNAME = c.String(),
+                    BENEFICIARY_MIDDLENAME = c.String(),
+                    BENEFICIARY_GenderId = c.Int(),
+                    BENEFICIARY_Country_LocationId = c.Int(),
+                    BENEFICIARY_State_of_ResidenceId = c.Int(),
+                    BENEFICIARY_LGA_of_ResidenceId = c.Int(),
+                    BENEFICIARY_City_of_residence = c.String(),
+                    BENEFICIARY_ADDRESS = c.String(),
+                    BENEFICIARY_RELATIONSHIPId = c.Int(),
+                    BENEFICIARY_OFFICE_PHONE = c.String(),
+                    BENEFICIARY_MOBILE_PHONE = c.String(),
+                    BENEFICIARY_HOME_PHONE = c.String(),
+                    BENEFICIARY_ZIP_CODE = c.String(),
+                    BENEFICIARY_POBOX = c.String(),
+                    BENEFICIARY_EMail = c.String(),
+                    BENEFICIARY_NIN = c.String(),
+                    BENEFICIARY_BVN = c.String(),
+                    HasAcceptedTnC = c.Boolean(nullable: false),
+                    IsDetailsCompleted = c.Boolean(nullable: false),
+                    HasPencomApproved = c.Boolean(nullable: false),
+                    AGENT_CODE = c.String(),
+                    ApplicationUserId = c.Int(nullable: false),
+                    DateCreated = c.DateTime(nullable: false),
+                    DateModified = c.DateTime(nullable: false),
+                    IsDeleted = c.Boolean(nullable: false),
+                    ApplicationUser_Id = c.String(maxLength: 128),
+                    Country_Id = c.Int(),
+                    MaritalStatus_Id = c.Int(),
+                    State_Id = c.Int(),
+                })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.AspNetUsers", t => t.ApplicationUser_Id)
+                .ForeignKey("dbo.Countries", t => t.BENEFICIARY_Country_LocationId)
+                .ForeignKey("dbo.Genders", t => t.BENEFICIARY_GenderId)
+                .ForeignKey("dbo.LGAs", t => t.BENEFICIARY_LGA_of_ResidenceId)
+                .ForeignKey("dbo.Relationships", t => t.BENEFICIARY_RELATIONSHIPId)
+                .ForeignKey("dbo.States", t => t.BENEFICIARY_State_of_ResidenceId)
+                .ForeignKey("dbo.Titles", t => t.BENEFICIARY_TitleId)
+                .ForeignKey("dbo.Countries", t => t.Correspondence_CountryId)
+                .ForeignKey("dbo.LGAs", t => t.Correspondence_LGAId, cascadeDelete: false)
+                .ForeignKey("dbo.States", t => t.Correspondence_StateId)
+                .ForeignKey("dbo.Countries", t => t.Country_Id)
+                .ForeignKey("dbo.Countries", t => t.Country_of_residenceId)
+                .ForeignKey("dbo.Countries", t => t.Employer_CountryId)
+                .ForeignKey("dbo.LGAs", t => t.Employer_LGAId, cascadeDelete: false)
+                .ForeignKey("dbo.States", t => t.Employer_StateId)
+                .ForeignKey("dbo.Genders", t => t.GenderId, cascadeDelete: false)
+                .ForeignKey("dbo.LGAs", t => t.LGA_of_OriginId, cascadeDelete: false)
+                .ForeignKey("dbo.LGAs", t => t.LGA_of_ResidenceId, cascadeDelete: false)
+                .ForeignKey("dbo.MaritalStatus", t => t.MaritalStatus_Id)
+                .ForeignKey("dbo.Countries", t => t.NOK_CountryId)
+                .ForeignKey("dbo.Genders", t => t.NOK_GenderId)
+                .ForeignKey("dbo.LGAs", t => t.NOK_LGA_of_ResidenceId)
+                .ForeignKey("dbo.Relationships", t => t.NOK_RELATIONSHIPId)
+                .ForeignKey("dbo.States", t => t.NOK_State_of_ResidenceId)
+                .ForeignKey("dbo.Titles", t => t.NOK_TitleId)
+                .ForeignKey("dbo.RsaStatus", t => t.RSAStatusId, cascadeDelete: false)
+                .ForeignKey("dbo.SectorClassifications", t => t.SectorClassificationId)
+                .ForeignKey("dbo.States", t => t.State_Id)
+                .ForeignKey("dbo.States", t => t.State_of_residenceId)
+                .ForeignKey("dbo.Titles", t => t.TitleId, cascadeDelete: false)
+                .Index(t => t.TitleId)
+                .Index(t => t.GenderId)
+                .Index(t => t.LGA_of_OriginId)
+                .Index(t => t.Country_of_residenceId)
+                .Index(t => t.State_of_residenceId)
+                .Index(t => t.LGA_of_ResidenceId)
+                .Index(t => t.Correspondence_CountryId)
+                .Index(t => t.Correspondence_StateId)
+                .Index(t => t.Correspondence_LGAId)
+                .Index(t => t.RSAStatusId)
+                .Index(t => t.SectorClassificationId)
+                .Index(t => t.Employer_CountryId)
+                .Index(t => t.Employer_StateId)
+                .Index(t => t.Employer_LGAId)
+                .Index(t => t.NOK_TitleId)
+                .Index(t => t.NOK_GenderId)
+                .Index(t => t.NOK_CountryId)
+                .Index(t => t.NOK_State_of_ResidenceId)
+                .Index(t => t.NOK_LGA_of_ResidenceId)
+                .Index(t => t.NOK_RELATIONSHIPId)
+                .Index(t => t.BENEFICIARY_TitleId)
+                .Index(t => t.BENEFICIARY_GenderId)
+                .Index(t => t.BENEFICIARY_Country_LocationId)
+                .Index(t => t.BENEFICIARY_State_of_ResidenceId)
+                .Index(t => t.BENEFICIARY_LGA_of_ResidenceId)
+                .Index(t => t.BENEFICIARY_RELATIONSHIPId)
+                .Index(t => t.ApplicationUser_Id)
+                .Index(t => t.Country_Id)
+                .Index(t => t.MaritalStatus_Id)
+                .Index(t => t.State_Id);
+        }
+        
+        public override void Down()
+        {
+            DropColumn("dbo.Employees", "HasPencomApproved");
+        }
+    }
+}

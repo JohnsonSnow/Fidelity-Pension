@@ -1,0 +1,350 @@
+﻿@model IEnumerable<FidelityPension.Models.Core.Employee>
+
+@{
+    ViewBag.Title = "RecapturedList";
+    Layout = "~/Areas/iPension/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Recapture Form</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="@Url.Action("Dashboard_1", "Dashboards")">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a>Forms</a>
+            </li>
+            <li class="active breadcrumb-item">
+                <strong>Recaptured</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Retirement Savings Account Recaptured List</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a href="#" class="dropdown-item">Config option 1</a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-item">Config option 2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content" style="overflow:auto">
+
+                    <table class="table table-striped table-bordered table-hover dataTables-example" style="overflow:scroll ">
+                        <thead>
+                            <tr>
+
+                                <th>
+                                    Title
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PIN)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PFA_Name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SURNAME)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FIRSTNAME)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.OTHERNAMES)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Mobile_Phone)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.MaidenName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DATE_OF_BIRTH)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Place_of_Birth)
+                                </th>
+                                <th>
+                                   Marital Status
+                                </th>
+                                <th>
+                                    Nationality
+                                </th>
+                                <th>
+                                    State
+                                </th>
+                                <th>
+                                   LGA
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.NIN)
+                                </th>
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.BVN)
+                                </th>
+                                @*<th>
+                                    @Html.DisplayNameFor(model => model.Photo_url)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Signature_url)
+                                </th>*@
+
+                               
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DateCreated)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DateModified)
+                                </th>
+                                @*<th>
+                                    @Html.DisplayNameFor(model => model.IsDeleted)
+                                </th>*@
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        @foreach (var item in Model)
+                        {
+                            <tbody>
+                                <tr>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Title.Value)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PIN)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PFA_Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SURNAME)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FIRSTNAME)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.OTHERNAMES)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Mobile_Phone)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MaidenName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DATE_OF_BIRTH)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Place_of_Birth)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MaritalStatus.Value)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Country.Value)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.State.Value)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LGA_of_Origin.Value)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NIN)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.BVN)
+                                    </td>
+                                    @*<td>
+                                        @Html.DisplayFor(modelItem => item.Photo_url)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Signature_url)
+                                    </td>*@
+
+
+
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DateCreated)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DateModified)
+                                    </td>
+                                    @*<td>
+                                        @Html.DisplayFor(modelItem => item.IsDeleted)
+                                    </td>*@
+                                    <td>
+                                        @Html.ActionLink("View Details", "RecaptureAcknowledgementSlip", new { id = item.Id })
+                                    </td>
+                                </tr>
+                            </tbody>
+                        }
+                        <tfoot>
+                            <tr>
+
+                                <th>
+                                    Title
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PIN)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PFA_Name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SURNAME)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FIRSTNAME)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.OTHERNAMES)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Mobile_Phone)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.MaidenName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DATE_OF_BIRTH)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Place_of_Birth)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.MARITAL_STATUSId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.NATIONALITYId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.STATE_OF_ORIGINId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LGA_of_Origin)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.NIN)
+                                </th>
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.BVN)
+                                </th>
+                              
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DateCreated)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DateModified)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.IsDeleted)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+@Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/plugins/jeditable")
+    @Scripts.Render("~/plugins/dataTables")
+
+<script type="text/javascript">
+        $(document).ready(function () {
+
+            $('.dataTables-example').DataTable({
+                dom: '<"html5buttons"B>lTfgitp',
+                buttons: [
+                    { extend: 'copy' },
+                    { extend: 'csv' },
+                    { extend: 'excel', title: 'Recaptured List' },
+                    { extend: 'pdf', title: 'Recaptured List' },
+
+                    {
+                        extend: 'print',
+                        customize: function (win) {
+                            $(win.document.body).addClass('white-bg');
+                            $(win.document.body).css('font-size', '10px');
+
+                            $(win.document.body).find('table')
+                                    .addClass('compact')
+                                    .css('font-size', 'inherit');
+                        }
+                    }
+                ]
+
+            });
+
+            /* Init DataTables */
+            var oTable = $('#editable').dataTable();
+
+            /* Apply the jEditable handlers to the table */
+            oTable.$('td').editable( '../example_ajax.php', {
+                "callback": function( sValue, y ) {
+                    var aPos = oTable.fnGetPosition( this );
+                    oTable.fnUpdate( sValue, aPos[0], aPos[1] );
+                },
+                "submitdata": function ( value, settings ) {
+                    return {
+                        "row_id": this.parentNode.getAttribute('id'),
+                        "column": oTable.fnGetPosition( this )[2]
+                    };
+                },
+
+                "width": "90%",
+                "height": "100%"
+            } );
+
+
+        });
+
+        function fnClickAddRow() {
+            $('#editable').dataTable().fnAddData( [
+                "Custom row",
+                "New row",
+                "New row",
+                "New row",
+                "New row" ] );
+
+        }
+</script>
+
+   
+}

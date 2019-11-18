@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About_Us" xml:space="preserve">
+    <value>Gbasara Anyị</value>
+  </data>
+  <data name="Contact_Us" xml:space="preserve">
+    <value>Kpọtụrụ anyị</value>
+  </data>
+  <data name="CTA_SubTitle" xml:space="preserve">
+    <value>Gwa anyị taa</value>
+  </data>
+  <data name="CTA_Title" xml:space="preserve">
+    <value>Nwere Ajụjụ Banyere Micro Pension?</value>
+  </data>
+  <data name="Footer_About_Writeup" xml:space="preserve">
+    <value>N'ebe a na-akwụ ụgwọ ndị na-ahụ maka ụgwọ ezumike nká (Fidelity Pension), anyị na-aghọta na nlekọta dị mma, nke na-etinye aka na arụmọrụ nke ọma ma dị irè, usoro na njikwa; na, ngwa ngwa na nke iru eru oru, bu uzo nke ngbadoro ugbua.</value>
+  </data>
+  <data name="For_More_Information_Contact_Us" xml:space="preserve">
+    <value>Maka ozi ndị ọzọ kpọtụrụ anyị</value>
+  </data>
+  <data name="Meet_Our_Board_Of_Directors" xml:space="preserve">
+    <value>Izute ndi ndu anyi</value>
+  </data>
+  <data name="Our_Core_Value" xml:space="preserve">
+    <value>T - Tụkwasịrị Obi, R - Nkwanye ùgwù, A - Mmasị, M - Innovation, T - Arụ ọrụ, S - Speed / Safety</value>
+  </data>
+  <data name="Our_Core_Value_Title" xml:space="preserve">
+    <value>Ụkpụrụ Anyị</value>
+  </data>
+  <data name="Our_Mission" xml:space="preserve">
+    <value>Iji nweta ọrụ ezumike nkasi obi na-akwụghachi ụgwọ maka ezumike nká obi ụtọ.</value>
+  </data>
+  <data name="Our_Mission_Title" xml:space="preserve">
+    <value>Ozi Anyị</value>
+  </data>
+  <data name="Our_Vision" xml:space="preserve">
+    <value>Iji bụrụ onye na-eduzi PFA kachasị mma, nke na-achịkwa ụgwọ ezumike nká n'ụzọ ziri ezi ma baa uru.</value>
+  </data>
+  <data name="Our_Vision_Title" xml:space="preserve">
+    <value>Ọhụụ anyị</value>
+  </data>
+  <data name="PS_Benefit_Administration_SubTitle" xml:space="preserve">
+    <value>Onye RSA ejiri ọrụ ya kwụsị ma ọ bụ onye a chụpụrụ na ọ dịbeghị</value>
+  </data>
+  <data name="PS_Benefit_Administration_Title" xml:space="preserve">
+    <value>Nchịkọta Uru</value>
+  </data>
+  <data name="PS_Cross_Border_Pension_SubTitle" xml:space="preserve">
+    <value>Ngwaahịa a na-eme ka ndị ọrụ ọfụma na-arụ ọrụ na ndị ụlọ ọrụ aha na Naijiria na ụmụ amaala Naijiria na-arụ ọrụ</value>
+  </data>
+  <data name="PS_Cross_Border_Pension_Title" xml:space="preserve">
+    <value>Ogologo uzo obosara nke ugwu</value>
+  </data>
+  <data name="PS_Micro_Pension_SubTitle" xml:space="preserve">
+    <value>bụ ego maka ụgwọ ezumike nká maka ndị ọrụ onwe ha na ndị na-arụ ọrụ n'ime otu</value>
+  </data>
+  <data name="PS_Micro_Pension_Title" xml:space="preserve">
+    <value>obere ụlọ ezumike nká</value>
+  </data>
+  <data name="PS_Retirement_Advisory_SubTitle" xml:space="preserve">
+    <value>Ma ị nwere ajụjụ n'ozuzu maọbụ ajụjụ ajuju metụtara ụgwọ ezumike nká gị, ndị ọkachamara n'ụlọ anyị</value>
+  </data>
+  <data name="PS_Retirement_Advisory_Title" xml:space="preserve">
+    <value>Akwadoro ezumike nká</value>
+  </data>
+  <data name="PS_RSA_Short_Note" xml:space="preserve">
+    <value>Onye ọ bụla na-arụ ọrụ ma ọ bụ onye inyeaka n'okpuru atụmatụ ezumike nkè ọhụrụ ga-emeghe RSA na ya</value>
+  </data>
+  <data name="PS_Title_RSA" xml:space="preserve">
+    <value>Ego ezumike nká</value>
+  </data>
+  <data name="PS_Title_Voluntary_Contribution" xml:space="preserve">
+    <value>Onyinye afọ ofufo</value>
+  </data>
+  <data name="PS_Voluntary_Contribution_Short_Note" xml:space="preserve">
+    <value>Gaa na onyinye ndị ọzọ ị nwere ike ikpebi itinye aka na ụgwọ ezumike nká gị</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>GỤKWUO</value>
+  </data>
+  <data name="Slider1_SubTitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Slider1_Title" xml:space="preserve">
+    <value>Atụmatụ New Micro Pension plan</value>
+  </data>
+  <data name="Slider2_SubTitle" xml:space="preserve">
+    <value>Mepee ego maka ego ezumike nká</value>
+  </data>
+  <data name="Slider2_Title" xml:space="preserve">
+    <value>Mee atụmatụ iweghachi obi ụtọ</value>
+  </data>
+  <data name="Slider3_SubTitle" xml:space="preserve">
+    <value>Mepee ego maka ego ezumike nká</value>
+  </data>
+  <data name="Slider3_Title" xml:space="preserve">
+    <value>Mee ka ị nwere ike ugbu a</value>
+  </data>
+  <data name="Slider4_SubTitle" xml:space="preserve">
+    <value> echi na mgbe niile na akaụntụ ezumike nká na Fidelity Pension Managers.</value>
+  </data>
+  <data name="Slider4_Title" xml:space="preserve">
+    <value>Jide egwu na-akpọ taa,</value>
+  </data>
+  <data name="ViewMore" xml:space="preserve">
+    <value>Lelee anya</value>
+  </data>
+  <data name="Home_Page" xml:space="preserve">
+    <value>ebe obibi</value>
+  </data>
+  <data name="Our_Address" xml:space="preserve">
+    <value>adreesị anyị</value>
+  </data>
+  <data name="Our_Company" xml:space="preserve">
+    <value>ụlọ ọrụ anyị</value>
+  </data>
+  <data name="Our_Gallery" xml:space="preserve">
+    <value>anyị gallery</value>
+  </data>
+  <data name="Our_Products_and_Services" xml:space="preserve">
+    <value>ngwaahịa na ọrụ anyi</value>
+  </data>
+  <data name="Resources" xml:space="preserve">
+    <value>ihe onwunwe</value>
+  </data>
+  <data name="Send_Message" xml:space="preserve">
+    <value>zipu ozi</value>
+  </data>
+  <data name="Voluntary_Contribution_Page" xml:space="preserve">
+    <value>Onyinye Aka
+
+Onyinye enyemaka (VC) na-ezo aka n'enyemaka ndị ọzọ ị nwere ike ikpebi ịgụnye na ntinye pensụl nke iwu mmachi maka ebumnuche nke ịkwalite ha ma ọ bụ naanị iwepụta ego maka ebumnuche. VC bụ onyinye nhọrọ ka emebere karịa 18% ndị were n'ọrụ na ntinye ọrụ na Akaụntụ vingschekwa ego lara ezumike nka (RSA). Nwere ike banye n’akwụkwọ VC gị n’okpuru iwu mbịara na mbupụ nke PenCom wepụtara.
+
+N'ihi ya, ndị otu na - ahụ maka njikwa ndị na - ahụ maka ọrụ nkwụghachi ntụkwasị obi bụ ihe dị oke mkpa na ọchịchị ya yana usoro arụmọrụ ya. Ndị otu a bụ ndị ọrụ nyochara ebumnuche na ebumnuche nke andlọ ọrụ yana ọ rụpụtara ma rụpụta atụmatụ ndị ọrụ anyị chọrọ iji nweta ihe ịga nke ọma. Ndị otu a n'otu n'otu na ijikọ aka hụ na ebumnuche na ebumnuche doro anya, a na-eleba anya ma na-edozi ihe ndị na-emegiderịta onwe ha dịka achọrọ, a na-enyocha ebumnuche na ebumnuche.
+
+Ngwakọta nke Otu Nlekọwa na-egosipụta iwu na usoro iwu chọrọ maka ndị ụlọ ọrụ na ndị na-ahụ maka ego ezumike nka, ntinye aka na-achịkwa ụlọ ọrụ yana ụkpụrụ nke ime. Ndị otu anyị nwere ahụmahụ na-agụnye ndị egwuregwu kachasị na-enwe atụmatụ, ego, itinye ego, arụmọrụ, nnabata, ahịa, inyocha, ihe ize ndụ, teknụzụ ozi na ikike iwu. Ha niile, ha na-eweta ọtụtụ ahụmịhe dịgasị iche iche dị mkpa maka ịkwalite Companylọ ọrụ ahụ gaa n'ihu.
+
+
+NWA ANYA
+
+Ala Inye onyinye
+Mgbanwe na ntinye aka
+Etinye ego nke ego ahu
+
+NWA OMA
+
+Ike mgbanwe
+Ikwu oke ego
+Ego Taxtụ Taxtụ Isi
+Atụmatụ ichekwa ego ga-adaba
+Etinye aka n’iru iweghachi ego
+
+
+OLEE M EGO EGO?
+Anyị dị anyị iji zaa ajụjụ gị niile ma nyere gị aka ịmalite atụmatụ nchekwa ego dị mfe taa. Kpọọ anyị na 01-2777300 ma ọ bụ ziga email na avcsales@fidelitypensionmanagers.com
+
+Maka nkọwa ndị ọzọ gbasara onyinye afọ ofufo, pịa Ebe a</value>
+  </data>
+</root>
